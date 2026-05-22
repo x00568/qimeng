@@ -1,0 +1,3052 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>宝宝启蒙乐园 · 3岁半专属</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+:root {
+  --c-pink: #ff85a2;
+  --c-yellow: #ffd166;
+  --c-blue: #4cc9f0;
+  --c-green: #06d6a0;
+  --c-purple: #b388ff;
+  --c-orange: #ff9f43;
+  --c-bg: #fff8f0;
+  --shadow: 0 4px 0 rgba(0,0,0,0.04), 0 8px 18px rgba(0,0,0,0.05);
+}
+html, body { height: 100%; }
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Hiragino Sans GB","Comic Sans MS",system-ui,sans-serif;
+  background:
+    radial-gradient(circle at 15% 20%, #fff0f6 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, #e0f7ff 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #fff8e7 0%, var(--c-bg) 70%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #333;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* 顶部 Header */
+header {
+  text-align: center;
+  padding: 0;
+  position: relative;
+  max-width: 920px;
+  margin: 12px auto 8px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(255, 192, 203, 0.25);
+}
+.header-bg {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1536 / 600;
+  background-image: url('images/ui/home_bg_wide.png');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 12px;
+}
+.header-title {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 28px;
+  padding: 10px 32px 12px;
+  box-shadow: 0 4px 16px rgba(255, 180, 200, 0.25), inset 0 0 0 1px rgba(255,255,255,0.6);
+}
+header h1 {
+  font-size: 38px;
+  background: linear-gradient(90deg, #d96b7d 0%, #c85a48 35%, #b87333 70%, #8a4a8b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  letter-spacing: 3px;
+  filter: drop-shadow(0 2px 0 rgba(255,255,255,0.95)) drop-shadow(0 3px 6px rgba(180,80,100,0.2));
+}
+header p {
+  color: #8a5a65;
+  font-size: 15px;
+  margin-top: 4px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.float-emoji {
+  position: absolute;
+  font-size: 28px;
+  animation: float 3s ease-in-out infinite;
+}
+.study-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.study-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 20px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, transform 0.2s;
+  font-weight: 700;
+  backdrop-filter: blur(4px);
+}
+.study-pill:hover { border-color: var(--c-pink); transform: translateY(-2px); }
+.study-pill b { color: #ff85a2; font-weight: 800; }
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+
+/* 模块网格（首页） */
+.menu {
+  max-width: 920px;
+  margin: 16px auto;
+  padding: 12px 16px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+.menu-card {
+  border-radius: 28px;
+  padding: 18px 12px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  box-shadow: var(--shadow);
+  border: 5px solid #fff;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.menu-card::before {
+  content: "";
+  position: absolute;
+  top: -30%; left: -30%;
+  width: 80%; height: 80%;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+.menu-card:active { transform: scale(0.96); }
+.menu-card:hover { transform: translateY(-3px); box-shadow: 0 6px 0 rgba(0,0,0,0.06), 0 12px 24px rgba(0,0,0,0.08); }
+.menu-card > * { position: relative; z-index: 1; }
+.menu-card .icon { font-size: 56px; display: block; line-height: 1; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15)); }
+.menu-card .icon-img {
+  width: 110px;
+  height: 110px;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
+}
+.menu-card .title { font-size: 22px; font-weight: 800; color: #fff; margin-top: 8px; text-shadow: 0 2px 0 rgba(0,0,0,0.15); }
+.menu-card .sub { font-size: 12px; color: rgba(255,255,255,0.85); margin-top: 4px; }
+
+.bg-1 { background: linear-gradient(135deg, #ffb3c1, #ff85a2); }
+.bg-2 { background: linear-gradient(135deg, #a9d6ff, #6db4f0); }
+.bg-3 { background: linear-gradient(135deg, #a8e6cf, #06d6a0); }
+.bg-4 { background: linear-gradient(135deg, #ffe5a0, #ffc04a); }
+.bg-5 { background: linear-gradient(135deg, #d4bfff, #b388ff); }
+.bg-6 { background: linear-gradient(135deg, #ffc89e, #ff9f43); }
+.bg-7 { background: linear-gradient(135deg, #b8c8e6, #8a9fc9); }
+
+/* 模块页面 */
+.page {
+  display: none;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 12px 16px 80px;
+  animation: fadeIn 0.4s;
+}
+.page.active { display: block; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 3px solid var(--c-pink);
+  color: var(--c-pink);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
+}
+.back-btn:active { transform: scale(0.95); }
+
+.page-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 900;
+  margin: 8px 0 18px;
+  color: #444;
+}
+
+/* 通用卡片网格 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 14px;
+}
+.learn-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 16px 8px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  border: 4px solid #fff;
+  transition: transform 0.2s;
+  position: relative;
+}
+.learn-card:active { transform: scale(0.92) rotate(-2deg); }
+.learn-card .emoji { font-size: 52px; line-height: 1; display: block; }
+.learn-card .pinyin { font-size: 14px; color: #ff85a2; margin-top: 8px; font-weight: 600; letter-spacing: 1px; }
+.learn-card .ch { font-size: 32px; font-weight: 900; color: #333; margin-top: 4px; }
+.learn-card .en { font-size: 14px; color: #4cc9f0; margin-top: 6px; font-weight: 700; letter-spacing: 0.5px; }
+
+/* 大展示页（点单字进入大图模式） */
+.big-show {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  backdrop-filter: blur(6px);
+}
+.big-show.active { display: flex; }
+.big-card {
+  background: #fff;
+  border-radius: 32px;
+  padding: 40px 28px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  animation: pop 0.3s;
+}
+@keyframes pop {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.big-card .emoji { font-size: 140px; line-height: 1; }
+.big-card .pinyin { font-size: 28px; color: var(--c-pink); margin-top: 18px; letter-spacing: 4px; font-weight: 600; }
+.big-card .ch { font-size: 96px; font-weight: 900; margin: 8px 0; color: #333; }
+.big-card .en { font-size: 28px; color: var(--c-blue); font-weight: 800; letter-spacing: 2px; }
+.big-card .sound-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 18px;
+  background: var(--c-yellow);
+  border: none;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #d4a52f;
+  color: #5d4200;
+}
+.big-card .sound-btn:active { transform: translateY(3px); box-shadow: 0 3px 0 #d4a52f; }
+.big-close {
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: #ff85a2;
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #b35d75;
+}
+
+/* 数学计数 */
+.count-area {
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  margin-bottom: 16px;
+}
+.count-num { font-size: 80px; font-weight: 900; color: var(--c-orange); line-height: 1; }
+.count-emojis {
+  font-size: 40px;
+  margin: 16px 0;
+  min-height: 60px;
+  letter-spacing: 4px;
+  word-break: break-all;
+}
+.count-controls { display: flex; justify-content: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+.btn {
+  background: var(--c-blue);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: 800;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.15);
+  transition: transform 0.1s;
+}
+.btn:active { transform: translateY(3px); box-shadow: 0 2px 0 rgba(0,0,0,0.15); }
+.btn.pink { background: var(--c-pink); }
+.btn.green { background: var(--c-green); }
+.btn.orange { background: var(--c-orange); }
+.btn.purple { background: var(--c-purple); }
+
+/* 加法练习 */
+.math-quiz {
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.math-q { font-size: 64px; font-weight: 900; margin-bottom: 16px; color: #444; }
+.math-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 14px; }
+.math-opt {
+  background: #fff8e7;
+  border: 4px solid var(--c-yellow);
+  border-radius: 20px;
+  padding: 18px;
+  font-size: 36px;
+  font-weight: 900;
+  cursor: pointer;
+  color: #444;
+}
+.math-opt:active { transform: scale(0.94); }
+.math-opt.right { background: var(--c-green); border-color: var(--c-green); color: #fff; }
+.math-opt.wrong { background: #ff6b6b; border-color: #ff6b6b; color: #fff; }
+.math-feedback {
+  font-size: 24px;
+  font-weight: 800;
+  margin-top: 14px;
+  min-height: 32px;
+  color: var(--c-pink);
+}
+.score-bar {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #888;
+  text-align: right;
+  font-weight: 700;
+}
+
+/* 儿歌 */
+.song-list { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.song-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  border: 4px solid #fff;
+}
+.song-card:active { transform: scale(0.98); }
+.song-card .icon {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c-pink), var(--c-purple));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+.song-card .info { flex: 1; }
+.song-card .name { font-size: 18px; font-weight: 800; color: #333; }
+.song-card .desc { font-size: 12px; color: #888; margin-top: 2px; }
+
+.song-detail {
+  background: #fff;
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  margin-top: 12px;
+  display: none;
+}
+.song-detail.show { display: block; }
+.song-detail h3 {
+  font-size: 22px;
+  color: var(--c-pink);
+  margin-bottom: 12px;
+  text-align: center;
+}
+.song-detail .lyrics {
+  font-size: 20px;
+  line-height: 2;
+  text-align: center;
+  color: #444;
+  font-weight: 600;
+  white-space: pre-line;
+}
+.song-detail .play-btn {
+  display: block;
+  margin: 16px auto 0;
+}
+
+/* 游戏 */
+.game-pick {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.game-card {
+  background: linear-gradient(135deg, #fff, #fff8f0);
+  border: 4px solid #fff;
+  border-radius: 22px;
+  padding: 18px 12px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.game-card:active { transform: scale(0.95); }
+.game-card .emoji { font-size: 44px; }
+.game-card .title { font-size: 16px; font-weight: 800; margin-top: 8px; color: #444; }
+
+/* 配对游戏 */
+.match-area {
+  background: #fff;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  display: none;
+}
+.match-area.show { display: block; }
+.match-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+.match-item {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #4cc9f0, #4361ee);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 900;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+.match-item.flipped { background: #fff; border: 3px solid var(--c-yellow); color: #333; }
+.match-item.matched { background: var(--c-green); pointer-events: none; opacity: 0.7; }
+.match-item:active { transform: scale(0.94); }
+
+/* 找不同（找一样）游戏 */
+.find-area { background: #fff; border-radius: 24px; padding: 20px; box-shadow: var(--shadow); display: none; }
+.find-area.show { display: block; }
+.find-target { font-size: 22px; text-align: center; margin-bottom: 12px; font-weight: 700; color: #444; }
+.find-target .target-emoji { font-size: 48px; display: block; }
+.find-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.find-cell {
+  aspect-ratio: 1;
+  background: #fff8e7;
+  border: 3px solid #ffd166;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+}
+.find-cell:active { transform: scale(0.9); }
+.find-cell.found { background: var(--c-green); border-color: var(--c-green); }
+
+/* 颜色找一找 */
+.color-area { background: #fff; border-radius: 24px; padding: 20px; box-shadow: var(--shadow); display: none; }
+.color-area.show { display: block; }
+.color-target { text-align: center; font-size: 22px; font-weight: 800; margin-bottom: 12px; }
+.color-target .swatch {
+  display: inline-block; width: 60px; height: 60px; border-radius: 50%;
+  vertical-align: middle; margin: 0 8px; border: 4px solid #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.color-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.color-cell {
+  aspect-ratio: 1; border-radius: 16px; cursor: pointer; border: 4px solid #fff;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+}
+.color-cell:active { transform: scale(0.92); }
+.color-cell.bingo { animation: shake 0.4s; }
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-6px) rotate(-5deg); }
+  75% { transform: translateX(6px) rotate(5deg); }
+}
+
+/* 庆祝弹层 */
+.celebrate {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 2000;
+  display: none;
+}
+.celebrate.show { display: block; }
+.confetti {
+  position: absolute;
+  font-size: 32px;
+  animation: confetti-fall 1.5s linear forwards;
+}
+@keyframes confetti-fall {
+  0% { transform: translateY(-50px) rotate(0); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  top: 30%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 18px 28px;
+  border-radius: 24px;
+  font-size: 24px;
+  font-weight: 800;
+  z-index: 3000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 字母行（拼音/英语 26 字母） */
+.alphabet-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 10px;
+}
+.letter-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 14px 4px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  border: 4px solid #fff;
+  transition: transform 0.15s;
+}
+.letter-card:active { transform: scale(0.9) rotate(-3deg); }
+.letter-card .upper { font-size: 36px; font-weight: 900; color: var(--c-blue); line-height: 1; }
+.letter-card .lower { font-size: 22px; font-weight: 800; color: var(--c-pink); }
+.letter-card .word {
+  font-size: 11px; color: #888; margin-top: 4px; font-weight: 700;
+}
+
+/* 子模块标签栏 */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.tab {
+  flex-shrink: 0;
+  background: #fff;
+  border: 3px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #888;
+}
+.tab.active { background: var(--c-pink); color: #fff; border-color: var(--c-pink); }
+
+/* 拼音口诀 */
+.pinyin-tip {
+  background: #fff8e7;
+  border: 3px dashed var(--c-orange);
+  border-radius: 16px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #7a5a00;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+/* 古诗专用样式 */
+.poetry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+.poem-card {
+  background: linear-gradient(160deg, #fff 0%, #fefaf3 100%);
+  border-radius: 22px;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  border: 4px solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+.poem-card:active { transform: scale(0.94); }
+.poem-card .cover {
+  width: 100%;
+  aspect-ratio: 4/3;
+  display: block;
+  background: linear-gradient(180deg, #cfe9ff 0%, #fff5e0 100%);
+  position: relative;
+}
+.poem-card .cover svg, .poem-card .cover img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.poem-card .body {
+  padding: 10px 8px 14px;
+  background: #fff;
+}
+.poem-card .ptitle { font-size: 20px; font-weight: 900; color: #333; letter-spacing: 2px; }
+.poem-card .pauthor { font-size: 11px; color: #888; margin-top: 3px; }
+.poem-card .pid {
+  position: absolute; top: 8px; left: 10px;
+  font-size: 11px; color: #fff; font-weight: 800;
+  background: rgba(0,0,0,0.4); padding: 2px 8px; border-radius: 10px;
+  z-index: 2;
+}
+
+/* 古诗大屏阅读视图 */
+.poem-reader {
+  display: none;
+  position: fixed; inset: 0;
+  z-index: 1500;
+  background: linear-gradient(160deg, #fff8e7 0%, #ffe0b2 50%, #ffcc80 100%);
+  overflow-y: auto;
+  padding: 16px 16px 100px;
+}
+.poem-reader.active { display: block; animation: fadeIn 0.4s; }
+.pr-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 12px;
+}
+.pr-close, .pr-nav {
+  background: #fff;
+  border: 3px solid #d4a52f;
+  color: #8a6500;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+}
+.pr-close:active, .pr-nav:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(0,0,0,0.1); }
+.pr-nav { background: #ffd166; }
+.pr-nav.disabled { opacity: 0.4; pointer-events: none; }
+
+.poem-scene {
+  text-align: center;
+  margin: 8px 0 8px;
+  display: flex; justify-content: center;
+}
+.poem-scene .pr-cover {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4/3;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(180,120,30,0.25);
+  background: linear-gradient(180deg, #cfe9ff, #fff5d6);
+}
+.poem-scene .pr-cover svg, .poem-scene .pr-cover img {
+  width: 100%; height: 100%; display: block; object-fit: cover;
+}
+.poem-meta {
+  text-align: center;
+  margin: 4px 0 18px;
+}
+.poem-meta .pm-title {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 8px;
+  color: #5d3a00;
+  text-shadow: 0 2px 0 #fff;
+}
+.poem-meta .pm-author {
+  font-size: 16px;
+  color: #8a6500;
+  margin-top: 6px;
+  font-weight: 700;
+}
+.poem-body {
+  background: #fffef8;
+  border: 4px solid #f0d28a;
+  border-radius: 24px;
+  padding: 24px 18px;
+  margin: 0 auto;
+  max-width: 540px;
+  box-shadow: 0 8px 24px rgba(180,120,30,0.15);
+}
+.poem-line {
+  font-size: 30px;
+  line-height: 1.6;
+  text-align: center;
+  margin: 8px 0;
+  font-weight: 700;
+  color: #3d2800;
+  letter-spacing: 4px;
+  font-family: "KaiTi","STKaiti","楷体","Microsoft YaHei",serif;
+  cursor: pointer;
+  border-radius: 14px;
+  padding: 6px 8px;
+  transition: background 0.2s;
+}
+.poem-line:hover { background: #fff4d6; }
+.poem-line.active {
+  background: #ffd166;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+}
+.poem-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.pc-btn {
+  background: #ff85a2;
+  color: #fff;
+  border: none;
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: 800;
+  border-radius: 32px;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #c25677;
+}
+.pc-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #c25677; }
+.pc-btn.green { background: #06d6a0; box-shadow: 0 5px 0 #048b67; }
+.pc-btn.green:active { box-shadow: 0 2px 0 #048b67; }
+.pc-btn.gray { background: #aaa; box-shadow: 0 5px 0 #777; }
+.pc-btn.gray:active { box-shadow: 0 2px 0 #777; }
+.pc-btn.yellow { background: #ffd166; color: #5d3a00; box-shadow: 0 5px 0 #c9a447; }
+.pc-btn.yellow:active { box-shadow: 0 2px 0 #c9a447; }
+
+/* 英语视频列表 */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  padding: 4px 0 12px;
+}
+.video-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.04), 0 6px 14px rgba(0,0,0,0.06);
+  transition: transform 0.2s;
+  border: 3px solid #fff;
+}
+.video-card:hover { transform: translateY(-3px); border-color: var(--c-blue); }
+.video-card:active { transform: scale(0.97); }
+.vc-thumb {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, #4cc9f0, #b388ff);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vc-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.25) 100%);
+  pointer-events: none;
+}
+.vc-num {
+  position: absolute;
+  top: 6px; left: 8px;
+  background: rgba(255,255,255,0.92);
+  color: #4361ee;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 10px;
+  z-index: 2;
+}
+.vc-play {
+  font-size: 32px;
+  color: #fff;
+  background: rgba(0,0,0,0.45);
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  z-index: 2;
+  transition: transform 0.2s, background 0.2s;
+}
+.video-card:hover .vc-play { background: var(--c-pink); transform: scale(1.1); }
+
+/* 儿歌播放器 + 搜索 */
+.song-search-wrap {
+  margin: 8px 0 12px;
+}
+#song-search {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 14px;
+  border: 2px solid #ffd6e0;
+  background: #fff;
+  font-size: 15px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  font-family: inherit;
+}
+#song-search:focus { border-color: var(--c-pink); box-shadow: 0 2px 12px rgba(255,133,162,0.2); }
+.song-player {
+  background: linear-gradient(135deg, #fff8e7, #ffe5ec);
+  border: 2px solid #ffd6e0;
+  border-radius: 18px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  position: sticky;
+  top: 8px;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(255,133,162,0.15);
+}
+.sp-info { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 15px; font-weight: 800; color: #5d3a4a; }
+.sp-icon { font-size: 22px; }
+.sp-title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vc-body { padding: 8px 10px 10px; text-align: center; }
+.vc-title { font-size: 14px; font-weight: 800; color: #444; }
+.vc-topic { font-size: 12px; color: #888; margin-top: 2px; }
+.poem-page-modal {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 1700;
+  padding: 16px;
+  align-items: center; justify-content: center;
+  overflow: auto;
+}
+.poem-page-modal.active { display: flex; animation: fadeIn 0.3s; }
+.poem-page-modal img {
+  max-width: 100%;
+  max-height: 92vh;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+.poem-progress {
+  margin: 14px auto 0;
+  max-width: 540px;
+  height: 6px;
+  background: #f0d28a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.poem-progress > div {
+  height: 100%;
+  background: linear-gradient(90deg, #ff85a2, #ffd166);
+  width: 0%;
+  transition: width 0.3s;
+}
+.poem-status {
+  text-align: center;
+  font-size: 13px;
+  color: #8a6500;
+  margin-top: 8px;
+  min-height: 18px;
+}
+
+/* 汉字视频卡 */
+.video-card .play-icon {
+  position: absolute; top: 8px; right: 8px;
+  background: rgba(255,133,162,0.9);
+  color: #fff;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+.hanzi-video-modal {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 1600;
+  padding: 16px;
+  align-items: center; justify-content: center;
+}
+.hanzi-video-modal.active { display: flex; animation: fadeIn 0.3s; }
+.hanzi-video-modal video {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  background: #000;
+}
+.hvm-info {
+  position: absolute;
+  bottom: 16px; left: 50%; transform: translateX(-50%);
+  background: rgba(255,255,255,0.95);
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 800;
+}
+.hvm-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: #ff85a2;
+  color: #fff;
+  border: none;
+  font-size: 24px; font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #b35d75;
+}
+
+/* 汉字分组导航 */
+.hanzi-pager {
+  display: flex; gap: 6px; margin-bottom: 12px;
+  overflow-x: auto; padding-bottom: 4px;
+}
+.hanzi-pager .pg-btn {
+  flex-shrink: 0;
+  background: #fff;
+  border: 3px solid #ddd;
+  color: #888;
+  padding: 6px 14px;
+  border-radius: 18px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.hanzi-pager .pg-btn.active {
+  background: var(--c-pink); color: #fff; border-color: var(--c-pink);
+}
+
+footer {
+  text-align: center;
+  padding: 20px 16px;
+  color: #aaa;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-bg">
+    <div class="header-title">
+      <h1>宝宝启蒙乐园</h1>
+      <p>🧸 3岁半专属 · 一起开心学习吧 🧸</p>
+    </div>
+    <div class="study-bar">
+      <div class="study-pill">
+        <span>⏱️</span>
+        <span>今日学习 <b id="today-time">0 分钟</b></span>
+      </div>
+      <div class="study-pill" data-page="records">
+        <span>📋</span>
+        <span>学习记录</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 首页 -->
+<main id="home" class="page active">
+  <div class="menu">
+    <div class="menu-card bg-1" data-page="hanzi">
+      <img class="icon-img" src="images/icons3d/literacy.png" alt="汉字" />
+      <div class="title">汉字</div>
+      <div class="sub">看图识字</div>
+    </div>
+    <div class="menu-card bg-2" data-page="pinyin">
+      <img class="icon-img" src="images/icons3d/storybook.png" alt="拼音" />
+      <div class="title">拼音</div>
+      <div class="sub">声母韵母</div>
+    </div>
+    <div class="menu-card bg-3" data-page="english">
+      <img class="icon-img" src="images/icons3d/english.png" alt="英语" />
+      <div class="title">英语</div>
+      <div class="sub">ABC 单词</div>
+    </div>
+    <div class="menu-card bg-4" data-page="math">
+      <img class="icon-img" src="images/icons3d/math.png" alt="数学" />
+      <div class="title">数学</div>
+      <div class="sub">数数加减</div>
+    </div>
+    <div class="menu-card bg-5" data-page="song">
+      <img class="icon-img" src="images/icons3d/songs.png" alt="儿歌" />
+      <div class="title">儿歌</div>
+      <div class="sub">边唱边学</div>
+    </div>
+    <div class="menu-card bg-6" data-page="game">
+      <img class="icon-img" src="images/icons3d/trophy.png" alt="游戏" />
+      <div class="title">游戏</div>
+      <div class="sub">开心玩耍</div>
+    </div>
+    <div class="menu-card bg-7" data-page="poetry">
+      <img class="icon-img" src="images/icons3d/poetry.png" alt="古诗" />
+      <div class="title">古诗</div>
+      <div class="sub">真人朗读</div>
+    </div>
+  </div>
+  <footer>👨‍👩‍👧 建议在家长陪伴下使用 · 每次15分钟为佳</footer>
+</main>
+
+<!-- 汉字 -->
+<section id="hanzi" class="page">
+  <button class="back-btn" data-back>← 回家</button>
+  <h2 class="page-title">🀄 看图认汉字</h2>
+  <div class="tabs">
+    <div class="tab active" data-cat="hongen">📺 动画识字</div>
+    <div class="tab" data-cat="xiang">象形字</div>
+    <div class="tab" data-cat="shen">身体家人</div>
+    <div class="tab" data-cat="num">数字颜色</div>
+    <div class="tab" data-cat="dong">动作</div>
+  </div>
+  <div id="hanzi-pager-wrap"></div>
+  <div class="card-grid" id="hanzi-grid"></div>
+</section>
+
+<!-- 拼音 -->
+<section id="pinyin" class="page">
+  <button class="back-btn" data-back>← 回家</button>
+  <h2 class="page-title">📣 拼音宝宝</h2>
+  <div class="pinyin-tip">
+    💡 <b>3岁半小贴士</b>：拼音建议 5 岁后系统学习。这里只玩"听一听、看一看"，认得形状就好啦~
+  </div>
+  <div class="tabs">
+    <div class="tab active" data-py="sm">声母</div>
+    <div class="tab" data-py="ym">韵母</div>
+  </div>
+  <div class="alphabet-row" id="pinyin-grid"></div>
+</section>
+
+<!-- 英语 -->
+<section id="english" class="page">
+  <button class="back-btn" data-back>← 回家</button>
+  <h2 class="page-title">🔤 ABC 英语</h2>
+  <div class="tabs">
+    <div class="tab active" data-en="abc">字母 ABC</div>
+    <div class="tab" data-en="word">单词卡</div>
+    <div class="tab" data-en="video">🎬 动画课</div>
+  </div>
+  <div id="english-content"></div>
+</section>
+
+<!-- 数学 -->
+<section id="math" class="page">
+  <button class="back-btn" data-back>← 回家</button>
+  <h2 class="page-title">🔢 快乐数学</h2>
+  <div class="tabs">
+    <div class="tab active" data-math="count">数一数</div>
+    <div class="tab" data-math="add">加一加</div>
+    <div class="tab" data-math="shape">形状</div>
+  </div>
+  <div id="math-content"></div>
+</section>
+
+<!-- 儿歌 -->
+<section id="song" class="page">
+  <button class="back-btn" data-back>← 回家</button>
+  <h2 class="page-title">🎵 儿歌时光</h2>
+  <div class="pinyin-tip">
+    💡 共 <b>576 首</b> 儿歌，按合集分类。点击歌曲直接播放，经典歌曲还能查看歌词
+  </div>
+  <div class="tabs" id="song-tabs">
+    <div class="tab active" data-song-group="经典">⭐ 经典12首</div>
+    <div class="tab" data-song-group="zhonghua">🇨🇳 中华</div>
+    <div class="tab" data-song-group="shaoer">🎒 少儿</div>
+    <div class="tab" data-song-group="qiaohu">🐯 巧虎</div>
+    <div class="tab" data-song-group="beiwa">🐻 贝瓦</div>
+  </div>
+  <div class="song-search-wrap">
+    <input type="text" id="song-search" placeholder="🔍 搜索歌曲名（如：小星星、ABC）" />
+  </div>
+  <div class="song-player" id="song-player" style="display:none;">
+    <div class="sp-info">
+      <span class="sp-icon">🎵</span>
+      <span class="sp-title" id="sp-title">未在播放</span>
+    </div>
+    <audio id="sp-audio" controls preload="auto" style="width:100%;"></audio>
+  </div>
+  <div class="song-list" id="song-list"></div>
+  <div class="song-detail" id="song-detail"></div>
+</section>
+
+<!-- 古诗 -->
+<section id="poetry" class="page">
+  <button class="back-btn" data-back>← 回家</button>
+  <h2 class="page-title">📜 古诗朗读</h2>
+  <div class="pinyin-tip">
+    🎙️ <b>共 138 首</b>，宝宝巴士真人朗读 · 点开任意一首进入大屏阅读模式 · 跟着音频同步高亮
+  </div>
+  <div class="tabs">
+    <div class="tab active" data-poet-age="3">3岁入门</div>
+    <div class="tab" data-poet-age="4">4岁</div>
+    <div class="tab" data-poet-age="5">5岁</div>
+    <div class="tab" data-poet-age="6">6岁+</div>
+  </div>
+  <div class="poetry-grid" id="poetry-grid"></div>
+</section>
+
+<!-- 古诗大屏阅读视图 -->
+<div class="poem-reader" id="poem-reader">
+  <div class="pr-bar">
+    <button class="pr-close" id="pr-close">← 返回列表</button>
+    <div style="display:flex; gap:8px;">
+      <button class="pr-nav" id="pr-prev">◀ 上一首</button>
+      <button class="pr-nav" id="pr-next">下一首 ▶</button>
+    </div>
+  </div>
+  <div class="poem-scene"><div class="pr-cover" id="pr-cover"></div></div>
+  <div class="poem-meta">
+    <div class="pm-title" id="pr-title">静夜思</div>
+    <div class="pm-author" id="pr-author">唐 · 李白</div>
+  </div>
+  <div class="poem-body" id="pr-body"></div>
+  <div class="poem-progress"><div id="pr-bar"></div></div>
+  <div class="poem-status" id="pr-status">点击下方按钮开始</div>
+  <div class="poem-controls">
+    <button class="pc-btn" id="pr-play">🎙️ 播放朗读</button>
+    <button class="pc-btn green" id="pr-replay">🔁 再听一遍</button>
+    <button class="pc-btn gray" id="pr-stop">⏸ 暂停</button>
+    <button class="pc-btn yellow" id="pr-pageimg" style="display:none;">📖 图文版</button>
+  </div>
+</div>
+
+<!-- 古诗图文版弹层 -->
+<div class="poem-page-modal" id="pp-modal">
+  <button class="hvm-close" id="pp-close">×</button>
+  <img id="pp-img" alt="图文版"/>
+</div>
+
+<!-- 汉字视频弹层 -->
+<div class="hanzi-video-modal" id="hv-modal">
+  <button class="hvm-close" id="hv-close">×</button>
+  <video id="hv-video" controls playsinline preload="auto"></video>
+  <div class="hvm-info" id="hv-info">一</div>
+</div>
+
+<!-- 游戏 -->
+<section id="game" class="page">
+  <button class="back-btn" data-back>← 回家</button>
+  <h2 class="page-title">🎮 趣味小游戏</h2>
+  <div class="game-pick">
+    <div class="game-card" data-game="match">
+      <div class="emoji">🃏</div>
+      <div class="title">翻牌配对</div>
+    </div>
+    <div class="game-card" data-game="find">
+      <div class="emoji">🔍</div>
+      <div class="title">找一找</div>
+    </div>
+    <div class="game-card" data-game="color">
+      <div class="emoji">🎨</div>
+      <div class="title">颜色乐园</div>
+    </div>
+  </div>
+  <div class="match-area" id="match-area">
+    <div style="text-align:center; font-weight:800; font-size:18px; color:#444;">
+      🃏 找出两张一样的小动物
+    </div>
+    <div class="score-bar" id="match-score">配对：0 / 6</div>
+    <div class="match-grid" id="match-grid"></div>
+    <div style="text-align:center; margin-top:14px;">
+      <button class="btn pink" id="match-restart">🔄 再来一局</button>
+    </div>
+  </div>
+  <div class="find-area" id="find-area">
+    <div class="find-target" id="find-target">找一找：<span class="target-emoji">🐰</span></div>
+    <div class="score-bar" id="find-score">找到：0</div>
+    <div class="find-grid" id="find-grid"></div>
+    <div style="text-align:center; margin-top:14px;">
+      <button class="btn green" id="find-restart">🔄 换一题</button>
+    </div>
+  </div>
+  <div class="color-area" id="color-area">
+    <div class="color-target" id="color-target">点一点 <span class="swatch" style="background:#ff6b6b"></span> 红色</div>
+    <div class="color-grid" id="color-grid"></div>
+    <div style="text-align:center; margin-top:14px;">
+      <button class="btn orange" id="color-next">➡️ 下一题</button>
+    </div>
+  </div>
+</section>
+
+<!-- 学习记录 -->
+<section id="records" class="page">
+  <button class="back-btn" data-back>← 回家</button>
+  <h2 class="page-title">📋 学习记录</h2>
+  <div class="count-area" style="margin-bottom:16px;">
+    <div style="font-size:18px; color:#888; margin-bottom:6px;">今日学习时长</div>
+    <div class="count-num" id="rec-today" style="font-size:64px;">0</div>
+    <div style="font-size:16px; color:#888;">分钟</div>
+  </div>
+  <div class="count-area" style="margin-bottom:16px;">
+    <div style="font-size:18px; color:#888; margin-bottom:10px;">各模块学习时长</div>
+    <div id="rec-modules"></div>
+  </div>
+  <div class="count-area" style="margin-bottom:16px;">
+    <div style="font-size:18px; color:#888; margin-bottom:10px;">最近听过的古诗</div>
+    <div id="rec-poems" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
+  </div>
+  <div class="count-area" style="margin-bottom:16px;">
+    <div style="font-size:18px; color:#888; margin-bottom:10px;">最近学过的汉字</div>
+    <div id="rec-hanzi" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
+  </div>
+  <div style="text-align:center; margin-top:20px;">
+    <button class="btn pink" id="rec-clear">🗑️ 清空记录</button>
+  </div>
+</section>
+
+<!-- 大图详情弹层 -->
+<div class="big-show" id="big-show">
+  <div class="big-card">
+    <button class="big-close" id="big-close">×</button>
+    <div class="emoji" id="big-emoji">🍎</div>
+    <div class="pinyin" id="big-pinyin">píng guǒ</div>
+    <div class="ch" id="big-ch">苹果</div>
+    <div class="en" id="big-en">Apple</div>
+  </div>
+</div>
+
+<!-- 庆祝层 -->
+<div class="celebrate" id="celebrate"></div>
+<div class="toast" id="toast"></div>
+
+<!-- 数据内联，避免 file:// 协议下 fetch 失败 -->
+<script src="data_inline.js"></script>
+<script src="data_english.js"></script>
+<script src="data_songs_v2.js"></script>
+
+<script>
+/* ========= CDN 配置 =========
+ * 阿里云 OSS 公共读 Bucket 默认外网域名（不需要备案，直接可访问）
+ * 部署后将 CDN_BASE 改为您的 OSS 外网访问域名
+ * 例：const CDN_BASE = 'https://qimeng-xueyuan.oss-cn-hangzhou.aliyuncs.com';
+ *
+ * 留空 = 用相对路径（HTML 也部署在 OSS 时，自动同源访问）
+ */
+const CDN_BASE = 'https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com';  // ← 部署时替换
+function asset(path) {
+  return CDN_BASE && !CDN_BASE.includes('PLACEHOLDER') ? CDN_BASE + '/' + path : path;
+}
+
+/* ========= 工具函数 ========= */
+const $ = sel => document.querySelector(sel);
+const $$ = sel => document.querySelectorAll(sel);
+
+/* 检测协议：file:// 直接打开会有 CORS 限制 */
+(function checkProtocol() {
+  if (location.protocol === 'file:') {
+    setTimeout(()=> {
+      const tip = document.createElement('div');
+      tip.style.cssText = 'position:fixed;left:0;right:0;bottom:0;background:#ff9f43;color:#fff;padding:12px 16px;font-size:13px;z-index:9999;text-align:center;font-weight:700;line-height:1.5;box-shadow:0 -4px 12px rgba(0,0,0,0.2);';
+      tip.innerHTML = '⚠️ <b>请通过云端链接打开</b>，本地双击 HTML 无法加载音频/视频' +
+        ' <span onclick="this.parentNode.style.display=\'none\'" style="cursor:pointer;background:#fff;color:#ff9f43;padding:2px 10px;border-radius:12px;margin-left:10px;">知道了</span>';
+      document.body.appendChild(tip);
+    }, 500);
+  }
+})();
+
+/* ========= 音效系统（替代 TTS）=========
+ * 全部使用本地 wav 提示音，不再用浏览器语音合成
+ * 音效来源：与小程序版本一致的 6 个 wav
+ *  - tap.wav    : 点击轻触
+ *  - pop.wav    : 弹出/翻牌
+ *  - correct.wav: 答对
+ *  - wrong.wav  : 答错
+ *  - star.wav   : 集星/奖励
+ *  - slide.wav  : 滑动/切换
+ */
+const SFX_PATH = 'audio/';
+const _sfxCache = {};
+function sfx(name, vol=1.0) {
+  let a = _sfxCache[name];
+  if (!a) {
+    a = new Audio(asset(SFX_PATH + name + '.wav'));
+    _sfxCache[name] = a;
+  }
+  try {
+    a.currentTime = 0;
+    a.volume = vol;
+    a.play().catch(()=>{});
+  } catch(e) {}
+  // 轻微震动反馈（移动端）
+  if (navigator.vibrate) {
+    try { navigator.vibrate(10); } catch(e) {}
+  }
+}
+
+/* 古诗音频播放器（独立实例，便于 stop 控制） */
+let _poemAudio = null;
+// 注意：playPoem 函数定义在古诗模块部分（包含宝宝巴士 144 集动态路径处理）
+function stopPoem() {
+  if (_poemAudio) {
+    try { _poemAudio.pause(); _poemAudio.currentTime = 0; } catch(e) {}
+    if (_poemAudio._lineTimer) { try { clearInterval(_poemAudio._lineTimer); } catch(e){} }
+    _poemAudio = null;
+  }
+}
+
+/* 停止所有正在播放的音视频（切页面/返回时调用） */
+function stopAllMedia() {
+  // 古诗音频
+  stopPoem();
+  // 儿歌音频（sp-audio）
+  const sp = document.getElementById('sp-audio');
+  if (sp) { try { sp.pause(); sp.currentTime = 0; } catch(e) {} }
+  const spPlayer = document.getElementById('song-player');
+  if (spPlayer) spPlayer.style.display = 'none';
+  // 汉字 / 英语视频弹层（hv-video + hv-modal）
+  const hv = document.getElementById('hv-video');
+  if (hv) { try { hv.pause(); hv.currentTime = 0; hv.removeAttribute('src'); hv.load(); } catch(e) {} }
+  const hvm = document.getElementById('hv-modal');
+  if (hvm) hvm.classList.remove('active');
+  // 古诗图文版浮层
+  const ppm = document.getElementById('pp-modal');
+  if (ppm) ppm.classList.remove('active');
+}
+
+function showToast(msg, dur=1200) {
+  const t = $('#toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(()=> t.classList.remove('show'), dur);
+}
+
+function celebrate() {
+  const layer = $('#celebrate');
+  layer.innerHTML = '';
+  layer.classList.add('show');
+  const emojis = ['🎉','🎊','⭐','🌟','💖','🎈','🌈','🎁','🍭','🍬'];
+  for (let i=0; i<24; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random()*100 + '%';
+    c.style.top = -50 + 'px';
+    c.style.animationDelay = (Math.random()*0.5) + 's';
+    c.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    layer.appendChild(c);
+  }
+  setTimeout(()=> layer.classList.remove('show'), 1800);
+}
+
+/* ========= 页面切换 ========= */
+let _currentModule = null;
+let _moduleStartTime = null;
+
+function navTo(pageId) {
+  // 记录离开当前模块
+  if (_currentModule && _currentModule !== 'home' && _moduleStartTime) {
+    recordSession(_currentModule, _moduleStartTime, Date.now());
+  }
+  $$('.page').forEach(p => p.classList.remove('active'));
+  $('#' + pageId).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  stopAllMedia();
+  // 记录进入新模块
+  if (pageId !== 'home' && pageId !== 'records') {
+    _currentModule = pageId;
+    _moduleStartTime = Date.now();
+  } else {
+    _currentModule = null;
+    _moduleStartTime = null;
+  }
+  if (pageId === 'records') renderRecords();
+}
+$$('.menu-card').forEach(card => {
+  card.addEventListener('click', ()=> { sfx('slide'); navTo(card.dataset.page); });
+});
+$$('.study-pill[data-page]').forEach(pill => {
+  pill.addEventListener('click', ()=> { sfx('slide'); navTo(pill.dataset.page); });
+});
+$$('[data-back]').forEach(b => b.addEventListener('click', ()=> {
+  sfx('tap');
+  navTo('home');
+}));
+
+/* ========= 学习记录系统 ========= */
+const MOD_NAMES = {
+  hanzi:'汉字', pinyin:'拼音', english:'英语', math:'数学',
+  song:'儿歌', game:'游戏', poetry:'古诗'
+};
+function loadRecords() {
+  try { return JSON.parse(localStorage.getItem('qimeng_records')) || {sessions:[], poemHistory:[], hanziHistory:[]}; }
+  catch(e) { return {sessions:[], poemHistory:[], hanziHistory:[]}; }
+}
+function saveRecords(data) {
+  localStorage.setItem('qimeng_records', JSON.stringify(data));
+}
+function recordSession(module, start, end) {
+  const duration = Math.round((end - start) / 1000);
+  if (duration < 5) return; // 少于5秒不计
+  const date = new Date().toISOString().slice(0, 10);
+  const data = loadRecords();
+  data.sessions.push({module, start, end, duration, date});
+  // 保留最近200条
+  if (data.sessions.length > 200) data.sessions = data.sessions.slice(-200);
+  saveRecords(data);
+  updateTodayDuration();
+}
+function recordPoem(p) {
+  const data = loadRecords();
+  const now = Date.now();
+  const date = new Date().toISOString().slice(0, 10);
+  const exists = data.poemHistory.some(h => h.id === p.id && h.date === date);
+  if (!exists) {
+    data.poemHistory.unshift({id: p.id, title: p.title, date, time: now});
+    if (data.poemHistory.length > 100) data.poemHistory.pop();
+    saveRecords(data);
+  }
+}
+function recordHanzi(item) {
+  const data = loadRecords();
+  const now = Date.now();
+  const date = new Date().toISOString().slice(0, 10);
+  const exists = data.hanziHistory.some(h => h.id === item.id && h.date === date);
+  if (!exists) {
+    data.hanziHistory.unshift({ch: item.ch, id: item.id, date, time: now});
+    if (data.hanziHistory.length > 100) data.hanziHistory.pop();
+    saveRecords(data);
+  }
+}
+function updateTodayDuration() {
+  const data = loadRecords();
+  const today = new Date().toISOString().slice(0, 10);
+  const totalSec = data.sessions.filter(s => s.date === today).reduce((sum, s) => sum + s.duration, 0);
+  const mins = Math.round(totalSec / 60);
+  const el = $('#today-time');
+  if (el) el.textContent = mins + ' 分钟';
+}
+function renderRecords() {
+  const data = loadRecords();
+  const today = new Date().toISOString().slice(0, 10);
+  const totalSec = data.sessions.filter(s => s.date === today).reduce((sum, s) => sum + s.duration, 0);
+  $('#rec-today').textContent = Math.round(totalSec / 60);
+
+  // 各模块时长（本周）
+  const weekAgo = Date.now() - 7*24*60*60*1000;
+  const modDur = {};
+  data.sessions.forEach(s => {
+    if (s.end >= weekAgo) {
+      modDur[s.module] = (modDur[s.module] || 0) + s.duration;
+    }
+  });
+  const modWrap = $('#rec-modules');
+  if (Object.keys(modDur).length === 0) {
+    modWrap.innerHTML = '<div style="color:#aaa; font-size:14px;">暂无记录，快去探索各个模块吧~</div>';
+  } else {
+    modWrap.innerHTML = '';
+    Object.entries(modDur).sort((a,b) => b[1] - a[1]).forEach(([mod, sec]) => {
+      const mins = Math.round(sec / 60);
+      const bar = document.createElement('div');
+      bar.style.cssText = 'display:flex; align-items:center; gap:10px; margin:6px 0; font-size:14px;';
+      bar.innerHTML = `
+        <div style="width:60px; text-align:right; font-weight:700; color:#444;">${MOD_NAMES[mod]||mod}</div>
+        <div style="flex:1; background:#eee; border-radius:8px; height:16px; overflow:hidden;">
+          <div style="width:${Math.min(100, mins)}%; background:linear-gradient(90deg,#ff85a2,#ffd166); height:100%; border-radius:8px; transition:width 0.6s;"></div>
+        </div>
+        <div style="width:50px; color:#888;">${mins}分</div>
+      `;
+      modWrap.appendChild(bar);
+    });
+  }
+
+  // 古诗历史
+  const poemWrap = $('#rec-poems');
+  if (data.poemHistory.length === 0) {
+    poemWrap.innerHTML = '<div style="color:#aaa; font-size:14px;">还没有听过古诗哦</div>';
+  } else {
+    poemWrap.innerHTML = '';
+    data.poemHistory.slice(0, 20).forEach(h => {
+      const tag = document.createElement('div');
+      tag.style.cssText = 'background:#fff8e7; border:2px solid #ffd166; border-radius:16px; padding:6px 12px; font-size:13px; color:#5d3a00; font-weight:700;';
+      tag.textContent = h.title;
+      poemWrap.appendChild(tag);
+    });
+  }
+
+  // 汉字历史
+  const hanziWrap = $('#rec-hanzi');
+  if (data.hanziHistory.length === 0) {
+    hanziWrap.innerHTML = '<div style="color:#aaa; font-size:14px;">还没有学过汉字哦</div>';
+  } else {
+    hanziWrap.innerHTML = '';
+    data.hanziHistory.slice(0, 20).forEach(h => {
+      const tag = document.createElement('div');
+      tag.style.cssText = 'background:#e0f7ff; border:2px solid #4cc9f0; border-radius:16px; padding:6px 12px; font-size:16px; color:#0a6b8a; font-weight:800;';
+      tag.textContent = h.ch;
+      hanziWrap.appendChild(tag);
+    });
+  }
+}
+$('#rec-clear').addEventListener('click', ()=> {
+  sfx('tap');
+  if (confirm('确定要清空所有学习记录吗？')) {
+    localStorage.removeItem('qimeng_records');
+    renderRecords();
+    updateTodayDuration();
+    showToast('记录已清空');
+  }
+});
+// 初始化显示今日时长
+updateTodayDuration();
+
+/* ========= 汉字数据 ========= */
+const HANZI = {
+  xiang: [
+    {ch:'人', py:'rén', en:'person', emoji:'🧍'},
+    {ch:'大', py:'dà',  en:'big',    emoji:'🙆'},
+    {ch:'小', py:'xiǎo',en:'small',  emoji:'🐭'},
+    {ch:'日', py:'rì',  en:'sun',    emoji:'☀️'},
+    {ch:'月', py:'yuè', en:'moon',   emoji:'🌙'},
+    {ch:'山', py:'shān',en:'mountain',emoji:'⛰️'},
+    {ch:'水', py:'shuǐ',en:'water',  emoji:'💧'},
+    {ch:'火', py:'huǒ', en:'fire',   emoji:'🔥'},
+    {ch:'木', py:'mù',  en:'tree',   emoji:'🌳'},
+    {ch:'雨', py:'yǔ',  en:'rain',   emoji:'🌧️'},
+    {ch:'牛', py:'niú', en:'cow',    emoji:'🐄'},
+    {ch:'马', py:'mǎ',  en:'horse',  emoji:'🐴'},
+    {ch:'鱼', py:'yú',  en:'fish',   emoji:'🐟'},
+    {ch:'鸟', py:'niǎo',en:'bird',   emoji:'🐦'},
+    {ch:'花', py:'huā', en:'flower', emoji:'🌸'},
+  ],
+  shen: [
+    {ch:'手', py:'shǒu',en:'hand',   emoji:'✋'},
+    {ch:'目', py:'mù',  en:'eye',    emoji:'👁️'},
+    {ch:'耳', py:'ěr',  en:'ear',    emoji:'👂'},
+    {ch:'口', py:'kǒu', en:'mouth',  emoji:'👄'},
+    {ch:'心', py:'xīn', en:'heart',  emoji:'❤️'},
+    {ch:'爸', py:'bà',  en:'dad',    emoji:'👨'},
+    {ch:'妈', py:'mā',  en:'mom',    emoji:'👩'},
+    {ch:'我', py:'wǒ',  en:'I',      emoji:'🙋'},
+    {ch:'你', py:'nǐ',  en:'you',    emoji:'👉'},
+    {ch:'家', py:'jiā', en:'home',   emoji:'🏠'},
+  ],
+  num: [
+    {ch:'一', py:'yī',  en:'one',    emoji:'1️⃣'},
+    {ch:'二', py:'èr',  en:'two',    emoji:'2️⃣'},
+    {ch:'三', py:'sān', en:'three',  emoji:'3️⃣'},
+    {ch:'四', py:'sì',  en:'four',   emoji:'4️⃣'},
+    {ch:'五', py:'wǔ',  en:'five',   emoji:'5️⃣'},
+    {ch:'红', py:'hóng',en:'red',    emoji:'🔴'},
+    {ch:'黄', py:'huáng',en:'yellow',emoji:'🟡'},
+    {ch:'蓝', py:'lán', en:'blue',   emoji:'🔵'},
+    {ch:'绿', py:'lǜ',  en:'green',  emoji:'🟢'},
+    {ch:'白', py:'bái', en:'white',  emoji:'⚪'},
+  ],
+  dong: [
+    {ch:'看', py:'kàn', en:'look',   emoji:'👀'},
+    {ch:'听', py:'tīng',en:'listen', emoji:'👂'},
+    {ch:'吃', py:'chī', en:'eat',    emoji:'🍽️'},
+    {ch:'喝', py:'hē',  en:'drink',  emoji:'🥛'},
+    {ch:'跑', py:'pǎo', en:'run',    emoji:'🏃'},
+    {ch:'跳', py:'tiào',en:'jump',   emoji:'🤸'},
+    {ch:'笑', py:'xiào',en:'laugh',  emoji:'😄'},
+    {ch:'哭', py:'kū',  en:'cry',    emoji:'😢'},
+    {ch:'玩', py:'wán', en:'play',   emoji:'🎲'},
+    {ch:'走', py:'zǒu', en:'walk',   emoji:'🚶'},
+  ],
+};
+
+function renderHanzi(cat='hongen') {
+  const grid = $('#hanzi-grid');
+  const pagerWrap = $('#hanzi-pager-wrap');
+  grid.innerHTML = '';
+  pagerWrap.innerHTML = '';
+
+  if (cat === 'hongen') {
+    // 洪恩 400 字，分页显示（每页 30 个）—— 数据已通过 data_inline.js 预加载
+    if (!window.HONGEN_DATA || !window.HONGEN_DATA.length) {
+      grid.innerHTML = '<div style="text-align:center; padding:40px; color:#c00;">⚠️ 数据未加载，请确认 data_inline.js 与 index.html 在同一目录</div>';
+      return;
+    }
+    const PAGE_SIZE = 30;
+    const total = window.HONGEN_DATA.length;
+    const pages = Math.ceil(total / PAGE_SIZE);
+    let curPage = window._hongenPage || 0;
+    if (curPage >= pages) curPage = 0;
+    window._hongenPage = curPage;
+
+    // 分页按钮
+    const pager = document.createElement('div');
+    pager.className = 'hanzi-pager';
+    for (let i=0; i<pages; i++) {
+      const b = document.createElement('button');
+      b.className = 'pg-btn' + (i===curPage?' active':'');
+      const start = i*PAGE_SIZE + 1;
+      const end = Math.min((i+1)*PAGE_SIZE, total);
+      const startCh = window.HONGEN_DATA[i*PAGE_SIZE].ch;
+      const endCh = window.HONGEN_DATA[Math.min((i+1)*PAGE_SIZE, total)-1].ch;
+      b.textContent = `${startCh}-${endCh}`;
+      b.onclick = ()=> { sfx('slide'); window._hongenPage = i; renderHanzi('hongen'); };
+      pager.appendChild(b);
+    }
+    pagerWrap.appendChild(pager);
+
+    const slice = window.HONGEN_DATA.slice(curPage*PAGE_SIZE, (curPage+1)*PAGE_SIZE);
+    slice.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'learn-card video-card';
+      card.style.position = 'relative';
+      card.innerHTML = `
+        <div class="play-icon">▶</div>
+        <div class="ch" style="font-size:48px; margin-top:6px;">${item.ch}</div>
+        <div class="pinyin" style="font-size:11px; margin-top:6px; line-height:1.3;">${item.hint}</div>
+      `;
+      card.onclick = ()=> { sfx('pop'); openHanziVideo(item); };
+      grid.appendChild(card);
+    });
+    return;
+  }
+
+  // 其它类目：基础识字卡（emoji 配图）
+  HANZI[cat].forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'learn-card';
+    card.innerHTML = `
+      <span class="emoji">${item.emoji}</span>
+      <div class="pinyin">${item.py}</div>
+      <div class="ch">${item.ch}</div>
+      <div class="en">${item.en}</div>
+    `;
+    card.addEventListener('click', ()=> {
+      sfx('pop');
+      // 如果该字在洪恩 400 里，优先放视频
+      if (window.HONGEN_DATA) {
+        const found = window.HONGEN_DATA.find(x => x.ch === item.ch);
+        if (found) { openHanziVideo(found); return; }
+      }
+      showBig(item);
+    });
+    grid.appendChild(card);
+  });
+}
+$$('#hanzi .tab').forEach(t => {
+  t.addEventListener('click', ()=> {
+    sfx('slide');
+    $$('#hanzi .tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    window._hongenPage = 0;
+    renderHanzi(t.dataset.cat);
+  });
+});
+// 数据已由 data_inline.js 预加载到 window.HONGEN_DATA / window.POEM_ALL
+if (window.HONGEN_DATA) renderHanzi('hongen');
+
+/* ========= 汉字视频弹层 ========= */
+// 部署到 COS：所有汉字视频按 4 位 ID 平铺到 hanzi/ 目录（如 hanzi/0001.mp4）
+function openHanziVideo(item) {
+  recordHanzi(item);
+  const url = asset('hanzi/' + item.id + '.mp4');
+  const v = $('#hv-video');
+  v.src = url;
+  v.play().catch(()=>{});
+  $('#hv-info').textContent = `${item.ch} —— ${item.hint}`;
+  $('#hv-modal').classList.add('active');
+}
+$('#hv-close').addEventListener('click', ()=> {
+  sfx('tap');
+  const v = $('#hv-video');
+  try { v.pause(); v.src = ''; } catch(e) {}
+  $('#hv-modal').classList.remove('active');
+});
+$('#hv-modal').addEventListener('click', e => {
+  if (e.target.id === 'hv-modal') {
+    const v = $('#hv-video');
+    try { v.pause(); v.src = ''; } catch(e) {}
+    $('#hv-modal').classList.remove('active');
+  }
+});
+
+/* ========= 大图弹层 ========= */
+function showBig(item) {
+  $('#big-emoji').textContent = item.emoji;
+  $('#big-pinyin').textContent = item.py || '';
+  $('#big-ch').textContent = item.ch || '';
+  $('#big-en').textContent = item.en || '';
+  $('#big-show').classList.add('active');
+  $('#big-show').dataset.ch = item.ch;
+  $('#big-show').dataset.en = item.en;
+}
+$('#big-close').addEventListener('click', ()=> {
+  sfx('tap');
+  $('#big-show').classList.remove('active');
+});
+$('#big-show').addEventListener('click', e => {
+  if (e.target.id === 'big-show') {
+    $('#big-show').classList.remove('active');
+  }
+});
+
+/* ========= 拼音 ========= */
+const PINYIN = {
+  sm: [
+    ['b','玻'],['p','坡'],['m','摸'],['f','佛'],
+    ['d','得'],['t','特'],['n','呢'],['l','勒'],
+    ['g','哥'],['k','科'],['h','喝'],['j','鸡'],
+    ['q','七'],['x','西'],['zh','知'],['ch','吃'],
+    ['sh','师'],['r','日'],['z','字'],['c','次'],['s','丝'],
+  ],
+  ym: [
+    ['a','啊'],['o','哦'],['e','鹅'],['i','衣'],['u','屋'],['ü','鱼'],
+    ['ai','哀'],['ei','欸'],['ui','威'],['ao','奥'],['ou','欧'],['iu','优'],
+    ['ie','耶'],['üe','约'],['er','耳'],
+    ['an','安'],['en','恩'],['in','音'],['un','温'],['ün','晕'],
+    ['ang','昂'],['eng','鞥'],['ing','英'],['ong','轰'],
+  ]
+};
+function renderPinyin(type='sm') {
+  const grid = $('#pinyin-grid');
+  grid.innerHTML = '';
+  PINYIN[type].forEach(([p, ch]) => {
+    const card = document.createElement('div');
+    card.className = 'letter-card';
+    card.innerHTML = `
+      <div class="upper">${p}</div>
+      <div class="word">读作: ${ch}</div>
+    `;
+    card.addEventListener('click', ()=> {
+      sfx('pop');
+      showToast(`${p}  →  ${ch}`);
+    });
+    grid.appendChild(card);
+  });
+}
+$$('#pinyin .tab').forEach(t => {
+  t.addEventListener('click', ()=> {
+    sfx('slide');
+    $$('#pinyin .tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    renderPinyin(t.dataset.py);
+  });
+});
+renderPinyin();
+
+/* ========= 英语 ========= */
+const ABC = [
+  ['A','a','Apple','🍎'],['B','b','Bear','🐻'],['C','c','Cat','🐱'],['D','d','Dog','🐶'],
+  ['E','e','Egg','🥚'],['F','f','Fish','🐟'],['G','g','Grape','🍇'],['H','h','Hat','🎩'],
+  ['I','i','Ice','🧊'],['J','j','Juice','🧃'],['K','k','Kite','🪁'],['L','l','Lion','🦁'],
+  ['M','m','Moon','🌙'],['N','n','Nest','🪺'],['O','o','Owl','🦉'],['P','p','Panda','🐼'],
+  ['Q','q','Queen','👑'],['R','r','Rabbit','🐰'],['S','s','Sun','☀️'],['T','t','Tiger','🐯'],
+  ['U','u','Umbrella','☂️'],['V','v','Van','🚐'],['W','w','Watermelon','🍉'],['X','x','Xylophone','🎶'],
+  ['Y','y','Yo-yo','🪀'],['Z','z','Zebra','🦓'],
+];
+const WORDS = [
+  {ch:'苹果', en:'Apple', emoji:'🍎'},
+  {ch:'香蕉', en:'Banana', emoji:'🍌'},
+  {ch:'小猫', en:'Cat', emoji:'🐱'},
+  {ch:'小狗', en:'Dog', emoji:'🐶'},
+  {ch:'大象', en:'Elephant', emoji:'🐘'},
+  {ch:'青蛙', en:'Frog', emoji:'🐸'},
+  {ch:'葡萄', en:'Grape', emoji:'🍇'},
+  {ch:'帽子', en:'Hat', emoji:'🎩'},
+  {ch:'冰淇淋', en:'Ice cream', emoji:'🍦'},
+  {ch:'果汁', en:'Juice', emoji:'🧃'},
+  {ch:'风筝', en:'Kite', emoji:'🪁'},
+  {ch:'狮子', en:'Lion', emoji:'🦁'},
+  {ch:'妈妈', en:'Mom', emoji:'👩'},
+  {ch:'鼻子', en:'Nose', emoji:'👃'},
+  {ch:'橙子', en:'Orange', emoji:'🍊'},
+  {ch:'熊猫', en:'Panda', emoji:'🐼'},
+];
+function renderEnglish(type='abc') {
+  const c = $('#english-content');
+  if (type === 'abc') {
+    c.innerHTML = '<div class="alphabet-row" id="abc-row"></div>';
+    const row = $('#abc-row');
+    ABC.forEach(([U, l, w, e]) => {
+      const card = document.createElement('div');
+      card.className = 'letter-card';
+      card.innerHTML = `
+        <div class="upper">${U}${l}</div>
+        <div style="font-size:30px; line-height:1; margin:6px 0;">${e}</div>
+        <div class="word">${w}</div>
+      `;
+      card.addEventListener('click', ()=> {
+        sfx('pop');
+        showToast(`${U} for ${w}`);
+      });
+      row.appendChild(card);
+    });
+  } else if (type === 'word') {
+    c.innerHTML = '<div class="card-grid" id="word-grid"></div>';
+    const grid = $('#word-grid');
+    WORDS.forEach(w => {
+      const card = document.createElement('div');
+      card.className = 'learn-card';
+      card.innerHTML = `
+        <span class="emoji">${w.emoji}</span>
+        <div class="ch">${w.ch}</div>
+        <div class="en">${w.en}</div>
+      `;
+      card.addEventListener('click', ()=> {
+        sfx('pop');
+        showBig({emoji:w.emoji, ch:w.ch, en:w.en, py:''});
+      });
+      grid.appendChild(card);
+    });
+  } else if (type === 'video') {
+    const list = window.ENGLISH_VIDEOS || [];
+    if (!list.length) {
+      c.innerHTML = '<div style="text-align:center; padding:40px; color:#c00;">⚠️ 视频清单未加载</div>';
+      return;
+    }
+    c.innerHTML = `
+      <div style="text-align:center; color:#888; font-size:13px; margin-bottom:10px;">
+        🎬 Hello Teddy 洪恩幼儿英语 · 共 ${list.length} 集
+      </div>
+      <div class="video-grid" id="en-video-grid"></div>
+    `;
+    const grid = $('#en-video-grid');
+    list.forEach(v => {
+      const card = document.createElement('div');
+      card.className = 'video-card';
+      card.innerHTML = `
+        <div class="vc-thumb" style="background-image:url('${asset('english_thumb/' + v.id + '.jpg')}');">
+          <span class="vc-num">#${parseInt(v.id, 10)}</span>
+          <span class="vc-play">▶</span>
+        </div>
+        <div class="vc-body">
+          <div class="vc-title">${v.title}</div>
+          <div class="vc-topic">${v.topic}</div>
+        </div>
+      `;
+      card.addEventListener('click', ()=> {
+        sfx('pop');
+        openEnglishVideo(v);
+      });
+      grid.appendChild(card);
+    });
+  }
+}
+function openEnglishVideo(v) {
+  const url = asset('english/' + v.id + '.mp4');
+  const video = $('#hv-video');
+  video.src = url;
+  video.play().catch(()=>{});
+  $('#hv-info').textContent = `${v.title} —— ${v.topic}`;
+  $('#hv-modal').classList.add('active');
+  // 记录学习
+  if (typeof recordHanzi === 'function') {
+    // 复用 history 但单独存
+    const data = (function(){ try { return JSON.parse(localStorage.getItem('qimeng_records'))||{sessions:[],poemHistory:[],hanziHistory:[],videoHistory:[]}; } catch(e){ return {sessions:[],poemHistory:[],hanziHistory:[],videoHistory:[]}; } })();
+    if (!data.videoHistory) data.videoHistory = [];
+    const date = new Date().toISOString().slice(0,10);
+    if (!data.videoHistory.some(h => h.id === v.id && h.date === date)) {
+      data.videoHistory.unshift({id:v.id, title:v.title, topic:v.topic, date, time:Date.now()});
+      if (data.videoHistory.length > 100) data.videoHistory.pop();
+      localStorage.setItem('qimeng_records', JSON.stringify(data));
+    }
+  }
+}
+$$('#english .tab').forEach(t => {
+  t.addEventListener('click', ()=> {
+    sfx('slide');
+    $$('#english .tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    renderEnglish(t.dataset.en);
+  });
+});
+renderEnglish();
+
+/* ========= 数学 ========= */
+function renderMath(type='count') {
+  const c = $('#math-content');
+  if (type === 'count') {
+    c.innerHTML = `
+      <div class="count-area">
+        <div class="count-num" id="count-num">3</div>
+        <div class="count-emojis" id="count-emojis"></div>
+        <div class="count-controls">
+          <button class="btn pink" id="count-minus">➖ 少一个</button>
+          <button class="btn green" id="count-plus">➕ 多一个</button>
+        </div>
+      </div>
+      <div class="count-area" style="background:linear-gradient(135deg,#fff8e7,#fff);">
+        <div style="font-size:18px;font-weight:700;color:#888;margin-bottom:6px;">数到 10：</div>
+        <div style="font-size:48px; font-weight:900; color:var(--c-purple); letter-spacing:6px; line-height:1.4;">
+          1 2 3 4 5<br>6 7 8 9 10
+        </div>
+        <div style="font-size:18px; color:var(--c-blue); margin-top:10px; letter-spacing:2px; font-weight:700;">
+          一 二 三 四 五<br>六 七 八 九 十
+        </div>
+      </div>
+    `;
+    const items = ['🍎','🍓','🍊','🍋','🍌','🍇','🍑','🍒','🍐','🥝'];
+    let n = 3;
+    const update = () => {
+      n = Math.max(0, Math.min(10, n));
+      $('#count-num').textContent = n;
+      $('#count-emojis').textContent = items.slice(0, n).join(' ');
+    };
+    update();
+    $('#count-minus').onclick = ()=> { sfx('tap'); n--; update(); };
+    $('#count-plus').onclick = ()=> { sfx('pop'); n++; update(); if(n===10){ sfx('star'); celebrate(); } };
+  } else if (type === 'add') {
+    c.innerHTML = `
+      <div class="math-quiz">
+        <div class="score-bar" id="add-score">答对：0</div>
+        <div class="math-q" id="add-q">2 + 1 = ?</div>
+        <div class="math-options" id="add-opts"></div>
+        <div class="math-feedback" id="add-fb"></div>
+        <button class="btn pink" id="add-next" style="margin-top:14px;">下一题 ➡️</button>
+      </div>
+    `;
+    let score = 0;
+    const FRUITS = ['🍎','🍊','🍌','🍇','🍓','🥝'];
+    function newQ() {
+      const a = Math.floor(Math.random()*5)+1;
+      const b = Math.floor(Math.random()*Math.min(5, 9-a))+1;
+      const ans = a+b;
+      const opts = new Set([ans]);
+      while (opts.size < 4) opts.add(Math.max(1, ans + Math.floor(Math.random()*5)-2));
+      const arr = [...opts].sort(()=>Math.random()-0.5);
+      const f = FRUITS[Math.floor(Math.random()*FRUITS.length)];
+      $('#add-q').innerHTML = `${f.repeat(a)} <span style="color:#ff85a2;">+</span> ${f.repeat(b)} = ?<br><span style="font-size:32px;color:#888;">${a} + ${b} = ?</span>`;
+      const box = $('#add-opts');
+      box.innerHTML = '';
+      arr.forEach(v => {
+        const d = document.createElement('div');
+        d.className = 'math-opt';
+        d.textContent = v;
+        d.onclick = ()=> {
+          if (v === ans) {
+            d.classList.add('right');
+            $('#add-fb').textContent = '🎉 答对啦！真棒！';
+            score++;
+            $('#add-score').textContent = '答对：' + score;
+            sfx('correct');
+            celebrate();
+          } else {
+            d.classList.add('wrong');
+            $('#add-fb').textContent = '🤔 再想一想~';
+            sfx('wrong');
+          }
+        };
+        box.appendChild(d);
+      });
+      $('#add-fb').textContent = '';
+    }
+    $('#add-next').onclick = ()=> { sfx('slide'); newQ(); };
+    newQ();
+  } else if (type === 'shape') {
+    const SHAPES = [
+      {ch:'圆形', en:'Circle', emoji:'⭕', cn:'像太阳'},
+      {ch:'方形', en:'Square', emoji:'🟦', cn:'像积木'},
+      {ch:'三角形', en:'Triangle', emoji:'🔺', cn:'像屋顶'},
+      {ch:'星形', en:'Star', emoji:'⭐', cn:'像星星'},
+      {ch:'心形', en:'Heart', emoji:'❤️', cn:'像爱心'},
+      {ch:'菱形', en:'Diamond', emoji:'🔶', cn:'像钻石'},
+    ];
+    c.innerHTML = '<div class="card-grid" id="shape-grid"></div>';
+    const g = $('#shape-grid');
+    SHAPES.forEach(s => {
+      const card = document.createElement('div');
+      card.className = 'learn-card';
+      card.innerHTML = `
+        <span class="emoji">${s.emoji}</span>
+        <div class="ch">${s.ch}</div>
+        <div class="pinyin">${s.cn}</div>
+        <div class="en">${s.en}</div>
+      `;
+      card.onclick = ()=> {
+        sfx('pop');
+        showBig({emoji:s.emoji, ch:s.ch, en:s.en, py:s.cn});
+      };
+      g.appendChild(card);
+    });
+  }
+}
+$$('#math .tab').forEach(t => {
+  t.addEventListener('click', ()=> {
+    sfx('slide');
+    $$('#math .tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    renderMath(t.dataset.math);
+  });
+});
+renderMath();
+
+/* ========= 儿歌 ========= */
+const SONGS = [
+  {
+    name:'两只老虎', icon:'🐯',
+    desc:'最经典的儿歌',
+    lyrics:'两只老虎 两只老虎\n跑得快 跑得快\n一只没有眼睛\n一只没有尾巴\n真奇怪 真奇怪',
+    bili:'两只老虎 儿歌'
+  },
+  {
+    name:'小星星', icon:'⭐',
+    desc:'一闪一闪亮晶晶',
+    lyrics:'一闪一闪亮晶晶\n满天都是小星星\n挂在天上放光明\n好像许多小眼睛\n一闪一闪亮晶晶\n满天都是小星星',
+    bili:'小星星 儿歌'
+  },
+  {
+    name:'小兔子乖乖', icon:'🐰',
+    desc:'小兔子开门吧',
+    lyrics:'小兔子乖乖\n把门儿开开\n快点儿开开\n我要进来\n不开不开 我不开\n妈妈没回来\n谁来也不开',
+    bili:'小兔子乖乖 儿歌'
+  },
+  {
+    name:'数鸭子', icon:'🦆',
+    desc:'门前大桥下',
+    lyrics:'门前大桥下 游过一群鸭\n快来快来数一数\n二四六七八\n嘎嘎嘎嘎\n真呀真多呀',
+    bili:'数鸭子 儿歌'
+  },
+  {
+    name:'小燕子', icon:'🐦',
+    desc:'小燕子穿花衣',
+    lyrics:'小燕子 穿花衣\n年年春天来这里\n我问燕子你为啥来\n燕子说\n这里的春天最美丽',
+    bili:'小燕子 儿歌'
+  },
+  {
+    name:'拔萝卜', icon:'🥕',
+    desc:'嘿哟嘿哟拔不动',
+    lyrics:'拔萝卜 拔萝卜\n嘿哟嘿哟拔萝卜\n嘿哟嘿哟拔不动\n老太婆 快快来\n快来帮我们拔萝卜',
+    bili:'拔萝卜 儿歌'
+  },
+  {
+    name:'我爱我的幼儿园', icon:'🏫',
+    desc:'我爱我的幼儿园',
+    lyrics:'我爱我的幼儿园\n幼儿园里朋友多\n老师叫我好宝宝\n我说老师真像妈妈',
+    bili:'我爱我的幼儿园 儿歌'
+  },
+  {
+    name:'三只小熊', icon:'🐻',
+    desc:'熊爸爸熊妈妈',
+    lyrics:'有一个家\n三只熊\n熊爸爸 熊妈妈 熊宝宝\n熊爸爸胖胖\n熊妈妈瘦瘦\n熊宝宝好可爱',
+    bili:'三只小熊 儿歌'
+  },
+  {
+    name:'ABC Song', icon:'🔤',
+    desc:'英文字母歌',
+    lyrics:'A B C D E F G\nH I J K L M N O P\nQ R S T U V\nW X Y Z\nNow I know my ABC\nNext time won\'t you sing with me',
+    bili:'ABC Song 儿歌'
+  },
+  {
+    name:'Twinkle Twinkle', icon:'✨',
+    desc:'小星星英文版',
+    lyrics:'Twinkle, twinkle, little star\nHow I wonder what you are\nUp above the world so high\nLike a diamond in the sky\nTwinkle, twinkle, little star\nHow I wonder what you are',
+    bili:'Twinkle Twinkle Little Star'
+  },
+  {
+    name:'Baby Shark', icon:'🦈',
+    desc:'宝宝最爱的英文儿歌',
+    lyrics:'Baby Shark, doo doo doo doo doo doo\nBaby Shark, doo doo doo doo doo doo\nBaby Shark!\nMommy Shark, doo doo doo doo doo doo\nDaddy Shark, doo doo doo doo doo doo',
+    bili:'Baby Shark'
+  },
+  {
+    name:'Wheels on the Bus', icon:'🚌',
+    desc:'公交车的轮子',
+    lyrics:'The wheels on the bus go round and round\nRound and round, round and round\nThe wheels on the bus go round and round\nAll through the town',
+    bili:'Wheels on the Bus 儿歌'
+  },
+];
+function renderSongs(group='经典', keyword='') {
+  const list = $('#song-list');
+  list.innerHTML = '';
+  $('#song-detail').classList.remove('show');
+  $('#song-detail').innerHTML = '';
+
+  let items = [];
+  if (group === '经典') {
+    // 经典12首带歌词的
+    items = SONGS.map((s, i) => ({
+      idx: i, title: s.name, icon: s.icon, desc: s.desc,
+      hasLyrics: true, lyrics: s.lyrics, bili: s.bili,
+      classic: true,
+    }));
+  } else {
+    const grp = (window.SONG_GROUPS || {})[group];
+    if (!grp) {
+      list.innerHTML = '<div style="text-align:center; padding:40px; color:#aaa;">⚠️ 该合集数据未加载</div>';
+      return;
+    }
+    items = grp.songs.map(s => ({
+      idx: s.id, title: s.title, icon: '🎵', desc: '',
+      id: s.id, group: group,
+    }));
+  }
+
+  // 关键字过滤
+  if (keyword) {
+    const k = keyword.toLowerCase();
+    items = items.filter(s => s.title.toLowerCase().includes(k) || (s.desc && s.desc.toLowerCase().includes(k)));
+  }
+
+  if (!items.length) {
+    list.innerHTML = '<div style="text-align:center; padding:40px; color:#aaa;">😅 没找到匹配的歌曲</div>';
+    return;
+  }
+
+  // 分类信息
+  const info = document.createElement('div');
+  info.style.cssText = 'text-align:center; color:#888; font-size:13px; margin-bottom:8px;';
+  info.textContent = `共 ${items.length} 首${keyword ? `（搜索"${keyword}"）` : ''}`;
+  list.appendChild(info);
+
+  items.forEach(s => {
+    const c = document.createElement('div');
+    c.className = 'song-card';
+    c.innerHTML = `
+      <div class="icon">${s.icon}</div>
+      <div class="info">
+        <div class="name">${s.title}</div>
+        <div class="desc">${s.desc || (s.classic ? '经典儿歌·有歌词' : '点击播放')}</div>
+      </div>
+      <div style="font-size:24px;color:var(--c-pink);">▶</div>
+    `;
+    c.onclick = ()=> {
+      sfx('pop');
+      if (s.classic) {
+        // 经典歌：显示歌词 + B站/YouTube
+        playClassicSong(s);
+      } else {
+        // 真实音频
+        playSongAudio(s);
+      }
+    };
+    list.appendChild(c);
+  });
+}
+
+function playClassicSong(s) {
+  // 隐藏顶部播放器
+  $('#song-player').style.display = 'none';
+  const det = $('#song-detail');
+  const biliQ = encodeURIComponent(s.bili || s.title);
+  const ytQ = encodeURIComponent(s.bili || s.title);
+  det.innerHTML = `
+    <h3>${s.icon} ${s.title}</h3>
+    <div class="lyrics">${s.lyrics}</div>
+    <div style="text-align:center; margin-top:18px; display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+      <a href="https://search.bilibili.com/all?keyword=${biliQ}" target="_blank" class="btn pink" style="text-decoration:none;">📺 B 站看 MV</a>
+      <a href="https://www.youtube.com/results?search_query=${ytQ}" target="_blank" class="btn" style="text-decoration:none; background:#ff0000;">📺 YouTube</a>
+    </div>
+    <div style="text-align:center; margin-top:14px; font-size:13px; color:#888;">
+      👨‍👩‍👧 家长可以陪宝宝一起念，或点击上方按钮看带画面的儿歌 MV
+    </div>
+  `;
+  det.classList.add('show');
+  det.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+function playSongAudio(s) {
+  $('#song-detail').classList.remove('show');
+  $('#song-detail').innerHTML = '';
+  const player = $('#song-player');
+  const audio = $('#sp-audio');
+  player.style.display = 'block';
+  $('#sp-title').textContent = s.title;
+  // 路径：songs/{group}/{file}
+  audio.src = asset(`songs/${s.group}/${s.id}.mp3`);
+  audio.play().catch(()=>{});
+  // 滚到播放器
+  player.scrollIntoView({behavior:'smooth', block:'start'});
+  // 学习记录
+  try {
+    const data = JSON.parse(localStorage.getItem('qimeng_records')) || {sessions:[],poemHistory:[],hanziHistory:[],videoHistory:[],songHistory:[]};
+    if (!data.songHistory) data.songHistory = [];
+    const date = new Date().toISOString().slice(0,10);
+    if (!data.songHistory.some(h => h.title === s.title && h.date === date)) {
+      data.songHistory.unshift({title: s.title, group: s.group, date, time: Date.now()});
+      if (data.songHistory.length > 100) data.songHistory.pop();
+      localStorage.setItem('qimeng_records', JSON.stringify(data));
+    }
+  } catch(e) {}
+}
+
+// Tab 切换
+$$('#song-tabs .tab').forEach(t => {
+  t.addEventListener('click', ()=> {
+    sfx('slide');
+    // 切换分类时停止当前播放的儿歌
+    const sp = $('#sp-audio');
+    if (sp) { try { sp.pause(); sp.currentTime = 0; } catch(e) {} }
+    $('#song-player').style.display = 'none';
+    $$('#song-tabs .tab').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    const search = $('#song-search').value.trim();
+    renderSongs(t.dataset.songGroup, search);
+  });
+});
+// 搜索
+let _songSearchTimer = null;
+$('#song-search').addEventListener('input', (e)=> {
+  clearTimeout(_songSearchTimer);
+  _songSearchTimer = setTimeout(()=> {
+    const active = $('#song-tabs .tab.active');
+    renderSongs(active.dataset.songGroup, e.target.value.trim());
+  }, 200);
+});
+renderSongs();
+
+/* ========= 游戏：翻牌配对 ========= */
+const MATCH_EMOJIS = ['🐶','🐱','🐰','🐼','🦁','🐯','🐸','🐵','🐷','🐮','🐔','🐙'];
+function initMatch() {
+  const pool = [...MATCH_EMOJIS].sort(()=>Math.random()-0.5).slice(0,6);
+  const cards = [...pool, ...pool].sort(()=>Math.random()-0.5);
+  const grid = $('#match-grid');
+  grid.innerHTML = '';
+  let first = null, lock = false, matched = 0;
+  cards.forEach((e, i)=>{
+    const d = document.createElement('div');
+    d.className = 'match-item';
+    d.dataset.emoji = e;
+    d.textContent = '?';
+    d.onclick = ()=> {
+      if (lock || d.classList.contains('flipped') || d.classList.contains('matched')) return;
+      sfx('tap');
+      d.classList.add('flipped');
+      d.textContent = e;
+      if (!first) { first = d; return; }
+      if (first.dataset.emoji === e) {
+        first.classList.add('matched');
+        d.classList.add('matched');
+        first = null;
+        matched++;
+        $('#match-score').textContent = `配对：${matched} / 6`;
+        sfx('correct');
+        if (matched === 6) {
+          setTimeout(()=>{ sfx('star'); celebrate(); showToast('🎉 全部找到啦！'); }, 300);
+        }
+      } else {
+        lock = true;
+        sfx('wrong', 0.5);
+        const a = first, b = d;
+        setTimeout(()=>{
+          a.classList.remove('flipped'); a.textContent = '?';
+          b.classList.remove('flipped'); b.textContent = '?';
+          first = null; lock = false;
+        }, 800);
+      }
+    };
+    grid.appendChild(d);
+  });
+  $('#match-score').textContent = '配对：0 / 6';
+}
+$('#match-restart').onclick = ()=> { sfx('slide'); initMatch(); };
+
+/* ========= 游戏：找一找 ========= */
+const FIND_POOL = ['🐰','🐶','🐱','🐼','🐯','🐸','🐵','🦊','🐮','🐷','🐔','🦁'];
+function initFind() {
+  const target = FIND_POOL[Math.floor(Math.random()*FIND_POOL.length)];
+  const others = FIND_POOL.filter(x=>x!==target);
+  const targetCount = 3 + Math.floor(Math.random()*3); // 3~5 个
+  const cells = [];
+  for (let i=0;i<targetCount;i++) cells.push(target);
+  while (cells.length < 20) cells.push(others[Math.floor(Math.random()*others.length)]);
+  cells.sort(()=>Math.random()-0.5);
+  const grid = $('#find-grid');
+  grid.innerHTML = '';
+  $('#find-target').innerHTML = `找一找：<span class="target-emoji">${target}</span>（共 ${targetCount} 只）`;
+  let found = 0;
+  cells.forEach(c=>{
+    const d = document.createElement('div');
+    d.className = 'find-cell';
+    d.textContent = c;
+    d.onclick = ()=> {
+      if (d.classList.contains('found')) return;
+      if (c === target) {
+        d.classList.add('found');
+        found++;
+        $('#find-score').textContent = `找到：${found}`;
+        sfx('correct');
+        if (found === targetCount) {
+          setTimeout(()=>{ sfx('star'); celebrate(); showToast('🌟 全部找到！'); }, 200);
+        }
+      } else {
+        sfx('wrong', 0.5);
+        showToast('❌ 再找找~');
+      }
+    };
+    grid.appendChild(d);
+  });
+  $('#find-score').textContent = '找到：0';
+}
+$('#find-restart').onclick = ()=> { sfx('slide'); initFind(); };
+
+/* ========= 游戏：颜色 ========= */
+const COLORS = [
+  {n:'红色', en:'Red',    c:'#ff5e5e'},
+  {n:'橙色', en:'Orange', c:'#ff9f43'},
+  {n:'黄色', en:'Yellow', c:'#ffd166'},
+  {n:'绿色', en:'Green',  c:'#06d6a0'},
+  {n:'蓝色', en:'Blue',   c:'#4cc9f0'},
+  {n:'紫色', en:'Purple', c:'#b388ff'},
+  {n:'粉色', en:'Pink',   c:'#ff85a2'},
+  {n:'棕色', en:'Brown',  c:'#a0522d'},
+];
+function initColor() {
+  const target = COLORS[Math.floor(Math.random()*COLORS.length)];
+  $('#color-target').innerHTML = `点一点 <span class="swatch" style="background:${target.c}"></span> ${target.n} <span style="color:#888;font-size:16px;">(${target.en})</span>`;
+  const pool = [...COLORS].sort(()=>Math.random()-0.5);
+  const grid = $('#color-grid');
+  grid.innerHTML = '';
+  pool.forEach(col => {
+    const d = document.createElement('div');
+    d.className = 'color-cell';
+    d.style.background = col.c;
+    d.onclick = ()=> {
+      if (col.n === target.n) {
+        d.classList.add('bingo');
+        sfx('correct');
+        setTimeout(()=>{ sfx('star'); celebrate(); }, 200);
+        setTimeout(initColor, 1400);
+      } else {
+        sfx('wrong', 0.5);
+        showToast('🤔 不对哦');
+      }
+    };
+    grid.appendChild(d);
+  });
+}
+$('#color-next').onclick = ()=> { sfx('slide'); initColor(); };
+
+/* ========= 游戏切换 ========= */
+$$('.game-card').forEach(g => {
+  g.onclick = ()=> {
+    sfx('pop');
+    const t = g.dataset.game;
+    ['match','find','color'].forEach(x => $('#'+x+'-area').classList.remove('show'));
+    $('#'+t+'-area').classList.add('show');
+    if (t==='match') initMatch();
+    if (t==='find') initFind();
+    if (t==='color') initColor();
+    setTimeout(()=> $('#'+t+'-area').scrollIntoView({behavior:'smooth', block:'start'}), 100);
+  };
+});
+
+/* ========= 古诗模块（138 首宝宝巴士真人朗读 + 沉浸式阅读视图） ========= */
+
+/* 诗句正文（前 60 首已有，用本地数据；其它从文件名 hint 推断标题） */
+const POEM_TEXT = {
+  '01': ['一去二三里，','烟村四五家。','亭台六七座，','八九十枝花。'],
+  '02': ['江南可采莲，','莲叶何田田。','鱼戏莲叶间，','鱼戏莲叶东，','鱼戏莲叶西。'],
+  '03': ['鹅，鹅，鹅，','曲项向天歌。','白毛浮绿水，','红掌拨清波。'],
+  '04': ['春眠不觉晓，','处处闻啼鸟。','夜来风雨声，','花落知多少。'],
+  '05': ['床前明月光，','疑是地上霜。','举头望明月，','低头思故乡。'],
+  '06': ['松下问童子，','言师采药去。','只在此山中，','云深不知处。'],
+  '07': ['小娃撑小艇，','偷采白莲回。','不解藏踪迹，','浮萍一道开。'],
+  '08': ['牧童骑黄牛，','歌声振林樾。','意欲捕鸣蝉，','忽然闭口立。'],
+  '09': ['离离原上草，','一岁一枯荣。','野火烧不尽，','春风吹又生。'],
+  '10': ['小时不识月，','呼作白玉盘。','又疑瑶台镜，','飞在青云端。'],
+  '11': ['远看山有色，','近听水无声。','春去花还在，','人来鸟不惊。'],
+  '12': ['解落三秋叶，','能开二月花。','过江千尺浪，','入竹万竿斜。'],
+  '13': ['锄禾日当午，','汗滴禾下土。','谁知盘中餐，','粒粒皆辛苦。'],
+  '14': ['岭外音书断，','经冬复历春。','近乡情更怯，','不敢问来人。'],
+  '15': ['危楼高百尺，','手可摘星辰。','不敢高声语，','恐惊天上人。'],
+  '16': ['泉眼无声惜细流，','树阴照水爱晴柔。','小荷才露尖尖角，','早有蜻蜓立上头。'],
+  '17': ['草长莺飞二月天，','拂堤杨柳醉春烟。','儿童散学归来早，','忙趁东风放纸鸢。'],
+  '18': ['头上红冠不用裁，','满身雪白走将来。','平生不敢轻言语，','一叫千门万户开。'],
+  '19': ['江上往来人，','但爱鲈鱼美。','君看一叶舟，','出没风波里。'],
+  '20': ['生当作人杰，','死亦为鬼雄。','至今思项羽，','不肯过江东。'],
+  '21': ['向晚意不适，','驱车登古原。','夕阳无限好，','只是近黄昏。'],
+  '22': ['李白乘舟将欲行，','忽闻岸上踏歌声。','桃花潭水深千尺，','不及汪伦送我情。'],
+  '23': ['远上寒山石径斜，','白云生处有人家。','停车坐爱枫林晚，','霜叶红于二月花。'],
+  '24': ['少小离家老大回，','乡音无改鬓毛衰。','儿童相见不相识，','笑问客从何处来。'],
+  '25': ['独坐幽篁里，','弹琴复长啸。','深林人不知，','明月来相照。'],
+  '26': ['大漠沙如雪，','燕山月似钩。','何当金络脑，','快走踏清秋。'],
+  '27': ['不论平地与山尖，','无限风光尽被占。','采得百花成蜜后，','为谁辛苦为谁甜。'],
+  '28': ['慈母手中线，','游子身上衣。','临行密密缝，','意恐迟迟归。','谁言寸草心，','报得三春晖。'],
+  '29': ['爆竹声中一岁除，','春风送暖入屠苏。','千门万户曈曈日，','总把新桃换旧符。'],
+  '30': ['昨日入城市，','归来泪满巾。','遍身罗绮者，','不是养蚕人。'],
+  '31': ['葡萄美酒夜光杯，','欲饮琵琶马上催。','醉卧沙场君莫笑，','古来征战几人回。'],
+  '32': ['千里莺啼绿映红，','水村山郭酒旗风。','南朝四百八十寺，','多少楼台烟雨中。'],
+  '33': ['竹外桃花三两枝，','春江水暖鸭先知。','蒌蒿满地芦芽短，','正是河豚欲上时。'],
+  '34': ['天街小雨润如酥，','草色遥看近却无。','最是一年春好处，','绝胜烟柳满皇都。'],
+  '35': ['江南好，','风景旧曾谙。','日出江花红胜火，','春来江水绿如蓝。','能不忆江南？'],
+  '36': ['千里黄云白日曛，','北风吹雁雪纷纷。','莫愁前路无知己，','天下谁人不识君。'],
+  '37': ['岐王宅里寻常见，','崔九堂前几度闻。','正是江南好风景，','落花时节又逢君。'],
+  '38': ['应怜屐齿印苍苔，','小扣柴扉久不开。','春色满园关不住，','一枝红杏出墙来。'],
+  '39': ['春种一粒粟，','秋收万颗子。','四海无闲田，','农夫犹饿死。'],
+  '40': ['横看成岭侧成峰，','远近高低各不同。','不识庐山真面目，','只缘身在此山中。'],
+  '41': ['绿遍山原白满川，','子规声里雨如烟。','乡村四月闲人少，','才了蚕桑又插田。'],
+  '42': ['清明时节雨纷纷，','路上行人欲断魂。','借问酒家何处有？','牧童遥指杏花村。'],
+  '43': ['朱雀桥边野草花，','乌衣巷口夕阳斜。','旧时王谢堂前燕，','飞入寻常百姓家。'],
+  '44': ['一道残阳铺水中，','半江瑟瑟半江红。','可怜九月初三夜，','露似真珠月似弓。'],
+  '45': ['朝辞白帝彩云间，','千里江陵一日还。','两岸猿声啼不住，','轻舟已过万重山。'],
+  '46': ['月落乌啼霜满天，','江枫渔火对愁眠。','姑苏城外寒山寺，','夜半钟声到客船。'],
+  '47': ['半亩方塘一鉴开，','天光云影共徘徊。','问渠那得清如许，','为有源头活水来。'],
+  '48': ['古人学问无遗力，','少壮工夫老始成。','纸上得来终觉浅，','绝知此事要躬行。'],
+  '49': ['独怜幽草涧边生，','上有黄鹂深树鸣。','春潮带雨晚来急，','野渡无人舟自横。'],
+  '50': ['荷尽已无擎雨盖，','菊残犹有傲霜枝。','一年好景君须记，','正是橙黄橘绿时。'],
+  '51': ['云母屏风烛影深，','长河渐落晓星沉。','嫦娥应悔偷灵药，','碧海青天夜夜心。'],
+  '52': ['昼出耘田夜绩麻，','村庄儿女各当家。','童孙未解供耕织，','也傍桑阴学种瓜。'],
+  '53': ['煮豆持作羹，','漉菽以为汁。','萁在釜下燃，','豆在釜中泣。','本是同根生，','相煎何太急？'],
+  '54': ['故人具鸡黍，','邀我至田家。','绿树村边合，','青山郭外斜。','开轩面场圃，','把酒话桑麻。','待到重阳日，','还来就菊花。'],
+  '55': ['九曲黄河万里沙，','浪淘风簸自天涯。','如今直上银河去，','同到牵牛织女家。'],
+  '56': ['好雨知时节，','当春乃发生。','随风潜入夜，','润物细无声。','野径云俱黑，','江船火独明。','晓看红湿处，','花重锦官城。'],
+  '57': ['山外青山楼外楼，','西湖歌舞几时休？','暖风熏得游人醉，','直把杭州作汴州。'],
+  '58': ['千锤万凿出深山，','烈火焚烧若等闲。','粉骨碎身浑不怕，','要留清白在人间。'],
+  '59': ['秦时明月汉时关，','万里长征人未还。','但使龙城飞将在，','不教胡马度阴山。'],
+  '60': ['吾家洗砚池头树，','个个花开淡墨痕。','不要人夸好颜色，','只留清气满乾坤。'],
+  '61': ['白日依山尽，','黄河入海流。','欲穷千里目，','更上一层楼。'],
+  '62': ['迟日江山丽，','春风花草香。','泥融飞燕子，','沙暖睡鸳鸯。'],
+  '63': ['日暮苍山远，','天寒白屋贫。','柴门闻犬吠，','风雪夜归人。'],
+  '64': ['君自故乡来，','应知故乡事。','来日绮窗前，','寒梅著花未？'],
+  '65': ['红豆生南国，','春来发几枝。','愿君多采撷，','此物最相思。'],
+  '66': ['人闲桂花落，','夜静春山空。','月出惊山鸟，','时鸣春涧中。'],
+  '67': ['月黑见渔灯，','孤光一点萤。','微微风簇浪，','散作满河星。'],
+  '68': ['墙角数枝梅，','凌寒独自开。','遥知不是雪，','为有暗香来。'],
+  '69': ['空山不见人，','但闻人语响。','返景入深林，','复照青苔上。'],
+  '70': ['林暗草惊风，','将军夜引弓。','平明寻白羽，','没在石棱中。'],
+  '71': ['山中相送罢，','日暮掩柴扉。','春草明年绿，','王孙归不归？'],
+  '72': ['众鸟高飞尽，','孤云独去闲。','相看两不厌，','只有敬亭山。'],
+  '73': ['敕勒川，','阴山下，','天似穹庐，','笼盖四野。','天苍苍，','野茫茫，','风吹草低见牛羊。'],
+  '74': ['只有天在上，','更无山与齐。','举头红日近，','回首白云低。'],
+  '75': ['千山鸟飞绝，','万径人踪灭。','孤舟蓑笠翁，','独钓寒江雪。'],
+  '76': ['两个黄鹂鸣翠柳，','一行白鹭上青天。','窗含西岭千秋雪，','门泊东吴万里船。'],
+  '77': ['故人西辞黄鹤楼，','烟花三月下扬州。','孤帆远影碧空尽，','唯见长江天际流。'],
+  '78': ['黄四娘家花满蹊，','千朵万朵压枝低。','留连戏蝶时时舞，','自在娇莺恰恰啼。'],
+  '79': ['此地别燕丹，','壮士发冲冠。','昔时人已没，','今日水犹寒。'],
+  '80': ['七夕今宵看碧霄，','牵牛织女渡河桥。','家家乞巧望秋月，','穿尽红丝几万条。'],
+  '81': ['篱落疏疏一径深，','树头新绿未成阴。','儿童急走追黄蝶，','飞入菜花无处寻。'],
+  '82': ['天门中断楚江开，','碧水东流至此回。','两岸青山相对出，','孤帆一片日边来。'],
+  '83': ['独在异乡为异客，','每逢佳节倍思亲。','遥知兄弟登高处，','遍插茱萸少一人。'],
+  '84': ['水光潋滟晴方好，','山色空蒙雨亦奇。','欲把西湖比西子，','淡妆浓抹总相宜。'],
+  '85': ['胜日寻芳泗水滨，','无边光景一时新。','等闲识得东风面，','万紫千红总是春。'],
+  '86': ['碧玉妆成一树高，','万条垂下绿丝绦。','不知细叶谁裁出，','二月春风似剪刀。'],
+  '87': ['日照香炉生紫烟，','遥看瀑布挂前川。','飞流直下三千尺，','疑是银河落九天。'],
+  '88': ['毕竟西湖六月中，','风光不与四时同。','接天莲叶无穷碧，','映日荷花别样红。'],
+  '89': ['蓬头稚子学垂纶，','侧坐莓苔草映身。','路人借问遥招手，','怕得鱼惊不应人。'],
+  '90': ['白发三千丈，','缘愁似个长。','不知明镜里，','何处得秋霜？'],
+  '91': ['黄河远上白云间，','一片孤城万仞山。','羌笛何须怨杨柳，','春风不度玉门关。'],
+  '92': ['渭城朝雨浥轻尘，','客舍青青柳色新。','劝君更尽一杯酒，','西出阳关无故人。'],
+  '93': ['萧萧梧叶送寒声，','江上秋风动客情。','知有儿童挑促织，','夜深篱落一灯明。'],
+  '94': ['西塞山前白鹭飞，','桃花流水鳜鱼肥。','青箬笠，绿蓑衣，','斜风细雨不须归。'],
+  '95': ['一叶渔船两小童，','收篙停棹坐船中。','怪生无雨都张伞，','不是遮头是使风。'],
+  '96': ['去年今日此门中，','人面桃花相映红。','人面不知何处去，','桃花依旧笑春风。'],
+  '97': ['黄梅时节家家雨，','青草池塘处处蛙。','有约不来过夜半，','闲敲棋子落灯花。'],
+  '98': ['咬定青山不放松，','立根原在破岩中。','千磨万击还坚劲，','任尔东西南北风。'],
+  '99': ['寒雨连江夜入吴，','平明送客楚山孤。','洛阳亲友如相问，','一片冰心在玉壶。'],
+  '100': ['洛阳城里见秋风，','欲作家书意万重。','复恐匆匆说不尽，','行人临发又开封。'],
+  '101': ['湖光秋月两相和，','潭面无风镜未磨。','遥望洞庭山水翠，','白银盘里一青螺。'],
+  '102': ['玉颗珊珊下月轮，','殿前拾得露华新。','至今不会天中事，','应是嫦娥掷与人。'],
+  '103': ['京口瓜洲一水间，','钟山只隔数重山。','春风又绿江南岸，','明月何时照我还？'],
+  '104': ['梅子金黄杏子肥，','麦花雪白菜花稀。','日长篱落无人过，','惟有蜻蜓蛱蝶飞。'],
+  '105': ['死去元知万事空，','但悲不见九州同。','王师北定中原日，','家祭无忘告乃翁。'],
+  '106': ['前不见古人，','后不见来者。','念天地之悠悠，','独怆然而涕下。'],
+  '107': ['草铺横野六七里，','笛弄晚风三四声。','归来饱饭黄昏后，','不脱蓑衣卧月明。'],
+  '108': ['锦城丝管日纷纷，','半入江风半入云。','此曲只应天上有，','人间能得几回闻？'],
+  '109': ['终日看山不厌山，','买山终待老山间。','山花落尽山长在，','山水空流山自闲。'],
+  '110': ['人间四月芳菲尽，','山寺桃花始盛开。','长恨春归无觅处，','不知转入此中来。'],
+  '111': ['梅雪争春未肯降，','骚人搁笔费评章。','梅须逊雪三分白，','雪却输梅一段香。'],
+  '112': ['草树知春不久归，','百般红紫斗芳菲。','杨花榆荚无才思，','惟解漫天作雪飞。'],
+  '113': ['九州生气恃风雷，','万马齐喑究可哀。','我劝天公重抖擞，','不拘一格降人才。'],
+  '114': ['三更灯火五更鸡，','正是男儿读书时。','黑发不知勤学早，','白首方悔读书迟。'],
+  '115': ['飞来山上千寻塔，','闻说鸡鸣见日升。','不畏浮云遮望眼，','自缘身在最高层。'],
+  '116': ['君问归期未有期，','巴山夜雨涨秋池。','何当共剪西窗烛，','却话巴山夜雨时。'],
+  '117': ['茅檐低小，溪上青青草。','醉里吴音相媚好，白发谁家翁媪？','大儿锄豆溪东，中儿正织鸡笼。','最喜小儿亡赖，溪头卧剥莲蓬。'],
+  '118': ['青海长云暗雪山，','孤城遥望玉门关。','黄沙百战穿金甲，','不破楼兰终不还。'],
+  '119': ['孤村落日残霞，','轻烟老树寒鸦。','一点飞鸿影下。','青山绿水，','白草红叶黄花。'],
+  '120': ['莫笑农家腊酒浑，','丰年留客足鸡豚。','山重水复疑无路，','柳暗花明又一村。'],
+  '121': ['明月别枝惊鹊，','清风半夜鸣蝉。','稻花香里说丰年，','听取蛙声一片。','七八个星天外，','两三点雨山前。','旧时茅店社林边，','路转溪桥忽见。'],
+  '122': ['（古诗联唱）'],
+  '123': ['（古诗联唱）'],
+  '124': ['（古诗联唱）'],
+  '125': ['（古诗联唱）'],
+  '126': ['（古诗联唱）'],
+  '127': ['（古诗联唱）'],
+  '128': ['飞下数点雪，','立向暮田东。','不见鱼跳处，','空看蕖叶风。'],
+  '129': ['江水三千里，','家书十五行。','行行无别语，','只道早还乡。'],
+  '130': ['篱外谁家不系船，','春风吹入钓鱼湾。','小童疑是有村客，','急向柴门去却关。'],
+  '131': ['新年都未有芳华，','二月初惊见草芽。','白雪却嫌春色晚，','故穿庭树作飞花。'],
+  '132': ['荷叶罗裙一色裁，','芙蓉向脸两边开。','乱入池中看不见，','闻歌始觉有人来。'],
+  '133': ['墙角数枝梅，','凌寒独自开。','遥知不是雪，','为有暗香来。'],
+  '134': ['山一程，水一程，','身向榆关那畔行，','夜深千帐灯。','风一更，雪一更，','聒碎乡心梦不成，','故园无此声。'],
+  '135': ['剑外忽传收蓟北，','初闻涕泪满衣裳。','却看妻子愁何在，','漫卷诗书喜欲狂。','白日放歌须纵酒，','青春作伴好还乡。','即从巴峡穿巫峡，','便下襄阳向洛阳。'],
+  '136': ['飞下数点雪，','立向暮田东。','不见鱼跳处，','空看蕖叶风。'],
+  '137': ['江水三千里，','家书十五行。','行行无别语，','只道早还乡。'],
+  '138': ['篱外谁家不系船，','春风吹入钓鱼湾。','小童疑是有村客，','急向柴门去却关。'],
+  '139': ['新年都未有芳华，','二月初惊见草芽。','白雪却嫌春色晚，','故穿庭树作飞花。'],
+  '140': ['荷叶罗裙一色裁，','芙蓉向脸两边开。','乱入池中看不见，','闻歌始觉有人来。'],
+  '141': ['三更灯火五更鸡，','正是男儿读书时。','黑发不知勤学早，','白首方悔读书迟。'],
+  '142': ['墙角数枝梅，','凌寒独自开。','遥知不是雪，','为有暗香来。'],
+  '143': ['山一程，水一程，','身向榆关那畔行，','夜深千帐灯。','风一更，雪一更，','聒碎乡心梦不成，','故园无此声。'],
+  '144': ['剑外忽传收蓟北，','初闻涕泪满衣裳。','却看妻子愁何在，','漫卷诗书喜欲狂。','白日放歌须纵酒，','青春作伴好还乡。','即从巴峡穿巫峡，','便下襄阳向洛阳。'],
+};
+
+/* SVG 场景插画库 - 按诗的主题画水彩中国风
+ * 关键词命中规则会返回对应 svg；没有命中返回默认山水图
+ */
+const SVG_SCENES = {
+  moon: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sky-m" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a2761"/><stop offset="1" stop-color="#3d4a8a"/>
+    </linearGradient></defs>
+    <rect width="200" height="150" fill="url(#sky-m)"/>
+    <circle cx="150" cy="40" r="22" fill="#fff8d6" opacity="0.95"/>
+    <circle cx="150" cy="40" r="22" fill="none" stroke="#fff" stroke-opacity="0.3" stroke-width="2"/>
+    <g fill="#fff" opacity="0.9"><circle cx="30" cy="30" r="1.5"/><circle cx="60" cy="20" r="1"/><circle cx="100" cy="40" r="1.2"/><circle cx="180" cy="80" r="1"/><circle cx="20" cy="80" r="1"/></g>
+    <path d="M0 110 Q50 95 100 105 T200 100 L200 150 L0 150 Z" fill="#2d2050"/>
+    <path d="M0 130 Q60 120 120 125 T200 125 L200 150 L0 150 Z" fill="#1a1430"/>
+  </svg>`,
+  
+  spring: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sky-s" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9d6ff"/><stop offset="1" stop-color="#fff5d6"/>
+    </linearGradient></defs>
+    <rect width="200" height="150" fill="url(#sky-s)"/>
+    <circle cx="160" cy="35" r="18" fill="#ffd166" opacity="0.85"/>
+    <ellipse cx="60" cy="115" rx="80" ry="20" fill="#90c97c"/>
+    <ellipse cx="140" cy="125" rx="80" ry="18" fill="#a8d68f"/>
+    <g fill="#ff85a2"><circle cx="40" cy="80" r="6"/><circle cx="48" cy="78" r="6"/><circle cx="44" cy="86" r="6"/><circle cx="52" cy="84" r="6"/></g>
+    <g fill="#ffb3c1"><circle cx="120" cy="90" r="5"/><circle cx="126" cy="86" r="5"/><circle cx="123" cy="93" r="5"/></g>
+    <path d="M30 115 Q35 70 45 115" stroke="#7a4f30" stroke-width="3" fill="none"/>
+    <path d="M115 125 Q120 85 128 125" stroke="#7a4f30" stroke-width="3" fill="none"/>
+    <path d="M0 5 Q30 15 60 8" stroke="#fff" stroke-width="3" fill="none" opacity="0.8"/>
+  </svg>`,
+  
+  river: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sky-r" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8f4ff"/><stop offset="1" stop-color="#a9d6ff"/>
+    </linearGradient></defs>
+    <rect width="200" height="150" fill="url(#sky-r)"/>
+    <path d="M0 70 L70 50 L80 70 L120 55 L140 75 L200 60 L200 95 L0 95 Z" fill="#7a8a96" opacity="0.7"/>
+    <rect y="95" width="200" height="55" fill="#5fa8d3"/>
+    <path d="M0 100 Q50 95 100 100 T200 100" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <path d="M0 115 Q50 110 100 115 T200 115" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M0 130 Q50 125 100 130 T200 130" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <ellipse cx="120" cy="105" rx="14" ry="3" fill="#8b5a3c"/>
+    <path d="M120 105 L120 92 L132 100 Z" fill="#f8d97f"/>
+  </svg>`,
+  
+  duck: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="150" fill="#cfe9ff"/>
+    <ellipse cx="60" cy="120" rx="90" ry="20" fill="#5fa8d3"/>
+    <ellipse cx="140" cy="135" rx="90" ry="18" fill="#4a8db8"/>
+    <g><ellipse cx="70" cy="95" rx="20" ry="14" fill="#fff"/>
+       <circle cx="55" cy="85" r="9" fill="#fff"/>
+       <circle cx="52" cy="83" r="1.5" fill="#000"/>
+       <path d="M44 86 L40 88 L44 89 Z" fill="#ff9f43"/></g>
+    <g><ellipse cx="130" cy="105" rx="18" ry="12" fill="#fff"/>
+       <circle cx="118" cy="98" r="7" fill="#fff"/>
+       <circle cx="115" cy="96" r="1" fill="#000"/>
+       <path d="M110 99 L107 101 L110 102 Z" fill="#ff9f43"/></g>
+    <g><ellipse cx="160" cy="115" rx="16" ry="11" fill="#fff"/>
+       <circle cx="150" cy="109" r="6" fill="#fff"/>
+       <path d="M142 110 L139 112 L142 113 Z" fill="#ff9f43"/></g>
+  </svg>`,
+  
+  lotus: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sky-l" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe9ff"/><stop offset="1" stop-color="#fff5d6"/>
+    </linearGradient></defs>
+    <rect width="200" height="150" fill="url(#sky-l)"/>
+    <ellipse cx="100" cy="120" rx="120" ry="25" fill="#6db58e"/>
+    <ellipse cx="50" cy="105" rx="22" ry="6" fill="#3d8c5b"/>
+    <ellipse cx="120" cy="100" rx="26" ry="7" fill="#3d8c5b"/>
+    <ellipse cx="170" cy="108" rx="20" ry="6" fill="#3d8c5b"/>
+    <g transform="translate(60 78)">
+      <ellipse cx="0" cy="0" rx="10" ry="12" fill="#ffb3c1"/>
+      <ellipse cx="-7" cy="2" rx="6" ry="10" fill="#ff85a2" transform="rotate(-30)"/>
+      <ellipse cx="7" cy="2" rx="6" ry="10" fill="#ff85a2" transform="rotate(30)"/>
+      <circle cx="0" cy="-2" r="3" fill="#fff8d6"/>
+    </g>
+    <g transform="translate(135 75)">
+      <ellipse cx="0" cy="0" rx="8" ry="10" fill="#ffb3c1"/>
+      <ellipse cx="-5" cy="2" rx="5" ry="8" fill="#ff85a2" transform="rotate(-30)"/>
+      <ellipse cx="5" cy="2" rx="5" ry="8" fill="#ff85a2" transform="rotate(30)"/>
+    </g>
+  </svg>`,
+  
+  mountain: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sky-mt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8d6ff"/><stop offset="1" stop-color="#fff5d6"/>
+    </linearGradient></defs>
+    <rect width="200" height="150" fill="url(#sky-mt)"/>
+    <circle cx="160" cy="40" r="14" fill="#ff9f43" opacity="0.7"/>
+    <path d="M0 130 L40 70 L80 100 L130 50 L170 90 L200 75 L200 150 L0 150 Z" fill="#7d8baa"/>
+    <path d="M0 130 L40 70 L80 100 L80 150 L0 150 Z" fill="#5e6d8d"/>
+    <path d="M130 50 L170 90 L170 150 L130 150 Z" fill="#5e6d8d"/>
+    <path d="M0 0 Q40 10 80 5 Q120 12 160 6 Q180 9 200 4" stroke="#fff" stroke-width="2" fill="none" opacity="0.6"/>
+  </svg>`,
+  
+  rain: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="150" fill="#a8b8c8"/>
+    <ellipse cx="60" cy="35" rx="35" ry="14" fill="#e0e8f0"/>
+    <ellipse cx="140" cy="40" rx="40" ry="16" fill="#d0dae6"/>
+    <ellipse cx="100" cy="55" rx="50" ry="14" fill="#c0cdd9"/>
+    <g stroke="#7da3c4" stroke-width="1.5">
+      <line x1="20" y1="80" x2="15" y2="100"/>
+      <line x1="50" y1="85" x2="45" y2="105"/>
+      <line x1="80" y1="80" x2="75" y2="100"/>
+      <line x1="110" y1="85" x2="105" y2="105"/>
+      <line x1="140" y1="80" x2="135" y2="100"/>
+      <line x1="170" y1="85" x2="165" y2="105"/>
+      <line x1="35" y1="105" x2="30" y2="125"/>
+      <line x1="95" y1="105" x2="90" y2="125"/>
+      <line x1="155" y1="105" x2="150" y2="125"/>
+    </g>
+    <ellipse cx="100" cy="135" rx="120" ry="12" fill="#5d7a96"/>
+  </svg>`,
+  
+  snow: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="150" fill="#dde7f1"/>
+    <path d="M0 100 L50 75 L100 90 L150 70 L200 85 L200 150 L0 150 Z" fill="#fff"/>
+    <path d="M30 85 L60 95 L40 105 Z" fill="#a8a89a"/>
+    <g fill="#fff" opacity="0.95">
+      <circle cx="20" cy="20" r="2"/><circle cx="50" cy="35" r="2"/><circle cx="90" cy="20" r="2"/>
+      <circle cx="120" cy="40" r="2"/><circle cx="160" cy="25" r="2"/><circle cx="180" cy="50" r="2"/>
+      <circle cx="40" cy="60" r="1.5"/><circle cx="100" cy="55" r="1.5"/><circle cx="170" cy="70" r="1.5"/>
+    </g>
+  </svg>`,
+  
+  bird: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sky-b" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9d6ff"/><stop offset="1" stop-color="#fff5d6"/>
+    </linearGradient></defs>
+    <rect width="200" height="150" fill="url(#sky-b)"/>
+    <ellipse cx="100" cy="135" rx="120" ry="18" fill="#90c97c"/>
+    <path d="M30 30 Q40 20 50 30 Q40 25 30 30" fill="#333"/>
+    <path d="M70 50 Q85 38 100 50 Q85 44 70 50" fill="#333"/>
+    <path d="M130 35 Q145 23 160 35 Q145 29 130 35" fill="#333"/>
+    <path d="M40 80 Q70 60 100 75 Q70 65 40 80" fill="#666" opacity="0.8"/>
+  </svg>`,
+  
+  cattle: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sky-c" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe9ff"/><stop offset="1" stop-color="#fff5d6"/>
+    </linearGradient></defs>
+    <rect width="200" height="150" fill="url(#sky-c)"/>
+    <ellipse cx="100" cy="125" rx="120" ry="20" fill="#90c97c"/>
+    <g transform="translate(70 80)">
+      <ellipse cx="0" cy="20" rx="35" ry="18" fill="#8b5a3c"/>
+      <ellipse cx="-30" cy="14" rx="14" ry="12" fill="#8b5a3c"/>
+      <path d="M-40 5 L-36 -2 M-22 5 L-18 -2" stroke="#5d3a2a" stroke-width="2"/>
+      <circle cx="-32" cy="13" r="1" fill="#000"/>
+      <line x1="-15" y1="35" x2="-15" y2="48" stroke="#8b5a3c" stroke-width="3"/>
+      <line x1="0" y1="35" x2="0" y2="48" stroke="#8b5a3c" stroke-width="3"/>
+      <line x1="15" y1="35" x2="15" y2="48" stroke="#8b5a3c" stroke-width="3"/>
+      <line x1="28" y1="35" x2="28" y2="48" stroke="#8b5a3c" stroke-width="3"/>
+    </g>
+  </svg>`,
+  
+  horse: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sky-h" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd6a9"/><stop offset="1" stop-color="#ffe8c0"/>
+    </linearGradient></defs>
+    <rect width="200" height="150" fill="url(#sky-h)"/>
+    <ellipse cx="100" cy="130" rx="120" ry="15" fill="#d4a574"/>
+    <g transform="translate(60 70)">
+      <ellipse cx="0" cy="20" rx="38" ry="16" fill="#5d3a2a"/>
+      <path d="M-35 10 L-45 0 L-40 18 Z" fill="#5d3a2a"/>
+      <path d="M-44 -2 L-40 5 L-36 -1" stroke="#3a2418" stroke-width="2" fill="none"/>
+      <line x1="-15" y1="34" x2="-18" y2="50" stroke="#3a2418" stroke-width="3"/>
+      <line x1="0" y1="34" x2="-3" y2="50" stroke="#3a2418" stroke-width="3"/>
+      <line x1="15" y1="34" x2="18" y2="50" stroke="#3a2418" stroke-width="3"/>
+      <line x1="28" y1="34" x2="31" y2="50" stroke="#3a2418" stroke-width="3"/>
+      <path d="M30 12 Q42 10 38 25" stroke="#3a2418" stroke-width="3" fill="none"/>
+    </g>
+  </svg>`,
+  
+  fish: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sky-f" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fa8d3"/><stop offset="1" stop-color="#2c5d8c"/>
+    </linearGradient></defs>
+    <rect width="200" height="150" fill="url(#sky-f)"/>
+    <g><ellipse cx="60" cy="60" rx="22" ry="10" fill="#ff9f43"/>
+       <path d="M40 60 L30 53 L30 67 Z" fill="#ff9f43"/>
+       <circle cx="70" cy="58" r="2" fill="#fff"/><circle cx="70" cy="58" r="1" fill="#000"/></g>
+    <g><ellipse cx="130" cy="100" rx="18" ry="8" fill="#ffd166"/>
+       <path d="M115 100 L107 95 L107 105 Z" fill="#ffd166"/>
+       <circle cx="138" cy="98" r="1.5" fill="#000"/></g>
+    <g><ellipse cx="40" cy="115" rx="14" ry="6" fill="#ff85a2"/>
+       <path d="M28 115 L22 111 L22 119 Z" fill="#ff85a2"/></g>
+    <g fill="#fff" opacity="0.6"><circle cx="100" cy="30" r="2"/><circle cx="160" cy="50" r="2"/><circle cx="20" cy="40" r="1.5"/><circle cx="170" cy="100" r="1.5"/></g>
+    <path d="M0 130 Q50 125 100 130 T200 128" stroke="#fff" stroke-width="1" fill="none" opacity="0.5"/>
+  </svg>`,
+  
+  child: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sky-cn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe9ff"/><stop offset="1" stop-color="#fff5d6"/>
+    </linearGradient></defs>
+    <rect width="200" height="150" fill="url(#sky-cn)"/>
+    <ellipse cx="100" cy="135" rx="120" ry="15" fill="#90c97c"/>
+    <g transform="translate(80 50)">
+      <circle cx="20" cy="20" r="14" fill="#ffd6a9"/>
+      <path d="M8 12 Q20 0 32 12 Q30 18 20 16 Q10 18 8 12" fill="#3a2418"/>
+      <circle cx="15" cy="22" r="1.2" fill="#000"/>
+      <circle cx="25" cy="22" r="1.2" fill="#000"/>
+      <path d="M16 28 Q20 31 24 28" stroke="#000" stroke-width="1" fill="none"/>
+      <rect x="8" y="34" width="24" height="28" rx="4" fill="#ff85a2"/>
+      <rect x="10" y="60" width="9" height="22" fill="#4a90e2"/>
+      <rect x="21" y="60" width="9" height="22" fill="#4a90e2"/>
+    </g>
+  </svg>`,
+  
+  pine: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sky-p" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9d6ff"/><stop offset="1" stop-color="#dde7f1"/>
+    </linearGradient></defs>
+    <rect width="200" height="150" fill="url(#sky-p)"/>
+    <ellipse cx="100" cy="135" rx="120" ry="15" fill="#7da37d"/>
+    <g transform="translate(60 70)">
+      <rect x="-3" y="30" width="6" height="35" fill="#5d3a2a"/>
+      <path d="M0 -10 L-25 25 L25 25 Z" fill="#3d6b3d"/>
+      <path d="M0 5 L-20 35 L20 35 Z" fill="#4a7a4a"/>
+      <path d="M0 18 L-18 45 L18 45 Z" fill="#558555"/>
+    </g>
+    <g transform="translate(140 80)" opacity="0.9">
+      <rect x="-2" y="20" width="4" height="25" fill="#5d3a2a"/>
+      <path d="M0 0 L-18 18 L18 18 Z" fill="#4a7a4a"/>
+      <path d="M0 10 L-15 28 L15 28 Z" fill="#558555"/>
+    </g>
+    <g fill="#fff" opacity="0.8"><circle cx="50" cy="20" r="6"/><circle cx="58" cy="18" r="5"/><circle cx="44" cy="22" r="5"/></g>
+  </svg>`,
+  
+  default_landscape: `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sky-d" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe9ff"/><stop offset="0.6" stop-color="#fff5d6"/><stop offset="1" stop-color="#ffd6a9"/>
+    </linearGradient></defs>
+    <rect width="200" height="150" fill="url(#sky-d)"/>
+    <circle cx="155" cy="40" r="16" fill="#ff9f43" opacity="0.7"/>
+    <path d="M0 105 L45 65 L80 90 L115 60 L150 85 L200 70 L200 150 L0 150 Z" fill="#7d8baa"/>
+    <path d="M0 105 L45 65 L70 88 L70 150 L0 150 Z" fill="#5e6d8d"/>
+    <ellipse cx="100" cy="130" rx="120" ry="12" fill="#90c97c"/>
+    <path d="M0 5 Q40 12 80 6 Q120 14 160 8 Q180 10 200 5" stroke="#fff" stroke-width="2" fill="none" opacity="0.6"/>
+  </svg>`,
+};
+
+/* 标题→场景映射 */
+function sceneFor(title, hint) {
+  const text = title + ' ' + (hint||'');
+  // 优先级从高到低
+  if (/月|嫦娥|夜思|月光|玉盘|银河|星/.test(text)) return SVG_SCENES.moon;
+  if (/雪|冬|寒/.test(text)) return SVG_SCENES.snow;
+  if (/雨/.test(text)) return SVG_SCENES.rain;
+  if (/鹅|鸭/.test(text)) return SVG_SCENES.duck;
+  if (/莲|荷/.test(text)) return SVG_SCENES.lotus;
+  if (/松|竹/.test(text)) return SVG_SCENES.pine;
+  if (/鱼|渔/.test(text)) return SVG_SCENES.fish;
+  if (/牛|羊/.test(text)) return SVG_SCENES.cattle;
+  if (/马/.test(text)) return SVG_SCENES.horse;
+  if (/鸟|燕|莺|雁|鹤|蝉|啼鸟/.test(text)) return SVG_SCENES.bird;
+  if (/儿|童|小娃|牧童/.test(text)) return SVG_SCENES.child;
+  if (/江|河|湖|池|水|船|舟|渡/.test(text)) return SVG_SCENES.river;
+  if (/春|花|柳/.test(text)) return SVG_SCENES.spring;
+  if (/山|岭|峰|岩/.test(text)) return SVG_SCENES.mountain;
+  return SVG_SCENES.default_landscape;
+}
+
+/* 检查是否有 AI 生成的真实图（约定路径 covers/{id}.png） */
+function getCoverImg(id) {
+  // 同步预检：通过 Image 探测
+  return 'covers/' + id + '.png';
+}
+
+/* 标题→emoji 映射（用于阅读视图大图） */
+function emojiFor(title, hint) {
+  const text = title + ' ' + (hint||'');
+  const map = [
+    [/月|夜|嫦娥/, '🌙'], [/星|银河/, '⭐'], [/日|阳|晴/, '☀️'],
+    [/雨|雷/, '🌧️'], [/雪|冬/, '❄️'], [/风|秋/, '🍃'],
+    [/春|花/, '🌸'], [/夏|荷|莲/, '🌺'], [/梅/, '🌼'],
+    [/鹅|鸭/, '🦆'], [/鸟|燕|莺|雁|鹤|鸡/, '🐦'], [/蜂|蝶/, '🐝'],
+    [/马|骑/, '🐴'], [/牛/, '🐄'], [/虎/, '🐯'],
+    [/鱼|渔|江|河|湖|池/, '🐟'], [/船|舟|渡/, '⛵'],
+    [/山|岭|峰|岩/, '⛰️'], [/竹/, '🎋'], [/松/, '🌲'],
+    [/柳|杨|树|林|木/, '🌳'], [/草|苗/, '🌱'],
+    [/桃|杏|桂|果/, '🍑'], [/葡萄/, '🍇'],
+    [/家|村|居|楼|寺|庙/, '🏠'], [/塞|边|关/, '🏯'],
+    [/儿|童|宝/, '👶'], [/老|翁|叟/, '👴'], [/母|娘|妻/, '👩'],
+    [/送别|思乡|游子/, '💌'], [/酒|杯/, '🍶'],
+    [/书|读|学|画/, '📚'], [/灯|烛/, '🕯️'],
+    [/雪梅|墨|笔/, '🖌️'], [/雷/, '⚡'],
+    [/蚕|丝/, '🧵'], [/鼠|猫|兔/, '🐰'],
+    [/钟|鼓/, '🔔'], [/龙/, '🐉'],
+  ];
+  for (const [re, e] of map) {
+    if (re.test(text)) return e;
+  }
+  return '📜';
+}
+
+let POEM_LIST = [];   // 当前显示的列表
+let POEM_ALL = [];    // 138 首全量
+let _curPoem = null;  // 当前阅读的诗
+let _curAge = 3;
+
+function renderPoetry(age=3) {
+  _curAge = age;
+  const grid = $('#poetry-grid');
+  grid.innerHTML = '';
+  // 数据已由 data_inline.js 预加载
+  if (!POEM_ALL.length && window.POEM_ALL) POEM_ALL = window.POEM_ALL;
+  if (!POEM_ALL.length) {
+    grid.innerHTML = '<div style="text-align:center;padding:40px;color:#c00;">⚠️ 数据未加载，请确认 data_inline.js 与 index.html 在同一目录</div>';
+    return;
+  }
+  POEM_LIST = POEM_ALL.filter(p => p.age === age);
+  POEM_LIST.forEach((p, idx) => {
+    const c = document.createElement('div');
+    c.className = 'poem-card';
+    const svg = sceneFor(p.title, p.hint);
+    // 默认 SVG 场景；优先用 AI 生成的封面图（covers/{id}.png）
+    c.innerHTML = `
+      <div class="pid">#${parseInt(p.id,10)}</div>
+      <div class="cover">${svg}</div>
+      <div class="body">
+        <div class="ptitle">${p.title.length > 7 ? p.title.slice(0,7)+'…' : p.title}</div>
+        <div class="pauthor">${p.dynasty}${p.dynasty?' · ':''}${p.author}</div>
+      </div>
+    `;
+    // 异步替换为 AI 生成的真实封面图（如存在）
+    const img = new Image();
+    img.onload = () => {
+      const cover = c.querySelector('.cover');
+      if (cover) cover.innerHTML = `<img src="${asset('covers/' + p.id + '.png')}" alt="${p.title}"/>`;
+    };
+    img.src = asset('covers/' + p.id + '.png');
+
+    c.onclick = ()=> { sfx('pop'); openPoemReader(p); };
+    grid.appendChild(c);
+  });
+}
+
+function openPoemReader(p) {
+  _curPoem = p;
+  recordPoem(p);
+  const lines = POEM_TEXT[p.id] || [p.hint || '（暂无文字稿，可直接听朗读）'];
+  // 设置封面：默认 SVG 场景；优先 AI 生成图
+  const cover = $('#pr-cover');
+  cover.innerHTML = sceneFor(p.title, p.hint);
+  const img = new Image();
+  img.onload = () => { cover.innerHTML = `<img src="${asset('covers/' + p.id + '.png')}" alt="${p.title}"/>`; };
+  img.src = asset('covers/' + p.id + '.png');
+
+  // 检测是否有原版图文页（poetryN/page_XX.jpg），有则显示"图文版"按钮
+  const idx = POEM_LIST.indexOf(p);
+  const pageNum = String(idx + 1).padStart(2, '0');
+  const pagePath = `images/poetry${_curAge}/page_${pageNum}.jpg`;
+  const pageImg = new Image();
+  pageImg.onload = () => {
+    const btn = $('#pr-pageimg');
+    if (btn) {
+      btn.style.display = 'inline-block';
+      btn.dataset.src = asset(pagePath);
+    }
+  };
+  pageImg.onerror = () => {
+    const btn = $('#pr-pageimg');
+    if (btn) btn.style.display = 'none';
+  };
+  pageImg.src = asset(pagePath);
+
+  $('#pr-title').textContent = p.title;
+  $('#pr-author').textContent = `${p.dynasty}${p.dynasty?' · ':''}${p.author}`;
+  const body = $('#pr-body');
+  body.innerHTML = '';
+  lines.forEach((line, i) => {
+    const div = document.createElement('div');
+    div.className = 'poem-line';
+    div.dataset.idx = i;
+    div.textContent = line;
+    // 不再随朗读自动高亮；点击仅做视觉聚焦，方便家长指给孩子看
+    div.onclick = ()=> {
+      sfx('tap');
+      $$('#pr-body .poem-line').forEach(x=>x.classList.remove('active'));
+      div.classList.add('active');
+    };
+    body.appendChild(div);
+  });
+  // 导航按钮状态
+  $('#pr-prev').classList.toggle('disabled', idx <= 0);
+  $('#pr-next').classList.toggle('disabled', idx >= POEM_LIST.length - 1);
+
+  $('#pr-status').textContent = '🎵 自动开始朗读…';
+  $('#pr-bar').style.width = '0%';
+  $('#poem-reader').classList.add('active');
+  window.scrollTo({top:0});
+  // 自动开始朗读
+  setTimeout(()=> playCurPoem(), 250);
+}
+
+function closePoemReader() {
+  stopPoem();
+  $('#poem-reader').classList.remove('active');
+}
+
+function playCurPoem() {
+  if (!_curPoem) return;
+  const a = playPoem(_curPoem.id);
+  if (!a) return;
+  $('#pr-status').textContent = '🎵 正在朗读…';
+
+  const lines = $$('#pr-body .poem-line');
+  // 不再做高亮跟读（识别精度不够，反而干扰孩子专注听）
+  lines.forEach(x => x.classList.remove('active'));
+
+  // 进度条同步整首音频的播放进度
+  a.addEventListener('timeupdate', () => {
+    const pct = a.duration ? (a.currentTime / a.duration * 100) : 0;
+    $('#pr-bar').style.width = pct + '%';
+  });
+
+  a.addEventListener('ended', () => {
+    $('#pr-status').textContent = '✅ 朗读完成 - 可以试着跟读哦';
+    $('#pr-bar').style.width = '100%';
+  });
+  a.addEventListener('error', () => {
+    $('#pr-status').textContent = '⚠️ 音频加载失败';
+  });
+}
+
+/* 古诗 MP3 - 部署版按 ID 平铺到 poetry/ 目录 */
+function playPoem(id) {
+  stopPoem();
+  _poemAudio = new Audio(asset('poetry/' + id + '.mp3'));
+  _poemAudio.play().catch(()=>{});
+  return _poemAudio;
+}
+
+$('#pr-close').onclick = ()=> { sfx('tap'); closePoemReader(); };
+$('#pr-play').onclick = ()=> { sfx('pop'); playCurPoem(); };
+$('#pr-replay').onclick = ()=> {
+  sfx('pop');
+  if (_poemAudio) {
+    _poemAudio.currentTime = 0;
+    _poemAudio.play().catch(()=>{});
+    $('#pr-status').textContent = '🎵 正在朗读…';
+  } else {
+    playCurPoem();
+  }
+};
+$('#pr-stop').onclick = ()=> {
+  sfx('tap');
+  if (_poemAudio) {
+    _poemAudio.pause();
+    $('#pr-status').textContent = '⏸ 已暂停';
+  }
+};
+$('#pr-prev').onclick = ()=> {
+  sfx('slide');
+  const idx = POEM_LIST.indexOf(_curPoem);
+  if (idx > 0) openPoemReader(POEM_LIST[idx-1]);
+};
+$('#pr-next').onclick = ()=> {
+  sfx('slide');
+  const idx = POEM_LIST.indexOf(_curPoem);
+  if (idx < POEM_LIST.length-1) openPoemReader(POEM_LIST[idx+1]);
+};
+$('#pr-pageimg').onclick = ()=> {
+  sfx('pop');
+  const src = $('#pr-pageimg').dataset.src;
+  if (src) {
+    $('#pp-img').src = src;
+    $('#pp-modal').classList.add('active');
+  }
+};
+$('#pp-close').onclick = ()=> { sfx('tap'); $('#pp-modal').classList.remove('active'); };
+$('#pp-modal').onclick = (e)=> { if (e.target.id === 'pp-modal') { $('#pp-modal').classList.remove('active'); } };
+
+$$('#poetry .tab').forEach(t => {
+  t.addEventListener('click', ()=> {
+    sfx('slide');
+    $$('#poetry .tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    stopPoem();
+    renderPoetry(parseInt(t.dataset.poetAge, 10));
+  });
+});
+renderPoetry(3);
+
+/* ========= 音频解锁（首次交互后允许自动播放）========= */
+let _audioUnlocked = false;
+function unlockAudio() {
+  if (_audioUnlocked) return;
+  _audioUnlocked = true;
+  // 预加载所有音效，触发首次播放权限
+  ['tap','pop','correct','wrong','star','slide'].forEach(name => {
+    const a = new Audio(asset(SFX_PATH + name + '.wav'));
+    a.volume = 0;
+    a.play().then(()=> a.pause()).catch(()=>{});
+    _sfxCache[name] = a;
+  });
+}
+document.addEventListener('click', unlockAudio, { once: true });
+document.addEventListener('touchstart', unlockAudio, { once: true });
+
+/* 页面关闭前保存当前会话 */
+window.addEventListener('beforeunload', ()=> {
+  if (_currentModule && _moduleStartTime) {
+    recordSession(_currentModule, _moduleStartTime, Date.now());
+  }
+});
+
+/* 切到其他标签页时暂停所有音视频（不重置进度） */
+document.addEventListener('visibilitychange', ()=> {
+  if (document.hidden) {
+    const sp = document.getElementById('sp-audio');
+    if (sp && !sp.paused) sp.pause();
+    const hv = document.getElementById('hv-video');
+    if (hv && !hv.paused) hv.pause();
+    if (_poemAudio && !_poemAudio.paused) {
+      try { _poemAudio.pause(); } catch(e) {}
+    }
+  }
+});
+</script>
+
+</body>
+</html>

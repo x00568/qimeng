@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>宝宝启蒙乐园 · 3岁半专属</title>
+<title>芮宝启蒙乐园 · 3岁半专属</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 :root {
@@ -45,7 +45,7 @@ header {
   position: relative;
   width: 100%;
   aspect-ratio: 1536 / 600;
-  background-image: url('https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/ui/home_bg_wide.png');
+  background-image: url('https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/ui/home_bg_wide.png?x-oss-process=image/quality,q_100');
   background-size: cover;
   background-position: center 35%;
   background-repeat: no-repeat;
@@ -173,6 +173,25 @@ header p {
 .bg-5 { background: linear-gradient(135deg, #d4bfff, #b388ff); }
 .bg-6 { background: linear-gradient(135deg, #ffc89e, #ff9f43); }
 .bg-7 { background: linear-gradient(135deg, #b8c8e6, #8a9fc9); }
+.bg-color {
+  background: linear-gradient(135deg, #ff85a2, #ffd166 25%, #06d6a0 50%, #4cc9f0 75%, #b388ff);
+  background-size: 300% 300%;
+  animation: rainbowShift 6s ease infinite;
+}
+@keyframes rainbowShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.menu-card.bg-color .icon-color-emoji {
+  font-size: 90px;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+  animation: spinSlow 8s linear infinite;
+  display: inline-block;
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
 /* 模块页面 */
 .page {
@@ -778,6 +797,151 @@ header p {
 .pc-btn.yellow { background: #ffd166; color: #5d3a00; box-shadow: 0 5px 0 #c9a447; }
 .pc-btn.yellow:active { box-shadow: 0 2px 0 #c9a447; }
 
+/* 颜色识别模块 */
+.color-stage {
+  margin: 8px 0 16px;
+}
+.color-show {
+  position: relative;
+  border-radius: 28px;
+  padding: 50px 20px 40px;
+  text-align: center;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  background: #ff6b6b;
+  color: #fff;
+  transition: background 0.5s, color 0.3s;
+  overflow: hidden;
+}
+.color-show::before {
+  content: "";
+  position: absolute;
+  top: -40%; right: -20%;
+  width: 60%; height: 80%;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.color-show::after {
+  content: "";
+  position: absolute;
+  bottom: -30%; left: -15%;
+  width: 50%; height: 70%;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.color-bigname {
+  font-size: 110px;
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 0 6px 0 rgba(0,0,0,0.18), 0 12px 30px rgba(0,0,0,0.25);
+  letter-spacing: 8px;
+  position: relative;
+  animation: popIn 0.5s ease;
+}
+@keyframes popIn {
+  0% { transform: scale(0.6); opacity: 0; }
+  60% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.color-pinyin {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 12px;
+  letter-spacing: 4px;
+  position: relative;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.15);
+}
+.color-en {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 4px;
+  opacity: 0.92;
+  position: relative;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.15);
+}
+.color-objects {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  background: #fff;
+  border-radius: 22px;
+  padding: 16px 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+.color-obj {
+  background: #fff8f0;
+  border: 3px solid #ffd6e0;
+  border-radius: 18px;
+  padding: 10px 4px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+.color-obj:active { transform: scale(0.92); }
+.color-obj.bounce { animation: objBounce 0.6s ease; }
+@keyframes objBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-12px) scale(1.1) rotate(-8deg); }
+  60% { transform: translateY(-6px) scale(1.05) rotate(8deg); }
+}
+.color-obj-emoji {
+  font-size: 38px;
+  display: block;
+  line-height: 1;
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,0.12));
+}
+.color-obj-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #5d3a4a;
+  margin-top: 4px;
+}
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+.color-swatch {
+  position: relative;
+  border-radius: 18px;
+  height: 70px;
+  cursor: pointer;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.08), 0 6px 14px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.25);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.color-swatch:hover { transform: translateY(-3px); }
+.color-swatch:active { transform: scale(0.95); }
+.color-swatch.active {
+  border-color: #ffd166;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.08), 0 0 0 4px rgba(255,209,102,0.5);
+  transform: translateY(-2px) scale(1.05);
+}
+.color-swatch.active::after {
+  content: "✓";
+  position: absolute;
+  top: -8px; right: -8px;
+  width: 24px; height: 24px;
+  background: #ffd166;
+  color: #5d3a00;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+}
+
 /* 英语视频列表 */
 .video-grid {
   display: grid;
@@ -990,7 +1154,7 @@ footer {
 <header>
   <div class="header-bg">
     <div class="header-title">
-      <h1>宝宝启蒙乐园</h1>
+      <h1>芮宝启蒙乐园</h1>
       <p>🧸 3岁半专属 · 一起开心学习吧 🧸</p>
     </div>
     <div class="study-bar">
@@ -1010,39 +1174,44 @@ footer {
 <main id="home" class="page active">
   <div class="menu">
     <div class="menu-card bg-1" data-page="hanzi">
-      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/literacy.png" alt="汉字" />
+      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/literacy.png?x-oss-process=image/quality,q_100" alt="汉字" />
       <div class="title">汉字</div>
       <div class="sub">看图识字</div>
     </div>
     <div class="menu-card bg-2" data-page="pinyin">
-      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/storybook.png" alt="拼音" />
+      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/storybook.png?x-oss-process=image/quality,q_100" alt="拼音" />
       <div class="title">拼音</div>
       <div class="sub">声母韵母</div>
     </div>
     <div class="menu-card bg-3" data-page="english">
-      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/english.png" alt="英语" />
+      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/english.png?x-oss-process=image/quality,q_100" alt="英语" />
       <div class="title">英语</div>
       <div class="sub">ABC 单词</div>
     </div>
     <div class="menu-card bg-4" data-page="math">
-      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/math.png" alt="数学" />
+      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/math.png?x-oss-process=image/quality,q_100" alt="数学" />
       <div class="title">数学</div>
       <div class="sub">数数加减</div>
     </div>
     <div class="menu-card bg-5" data-page="song">
-      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/songs.png" alt="儿歌" />
+      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/songs.png?x-oss-process=image/quality,q_100" alt="儿歌" />
       <div class="title">儿歌</div>
       <div class="sub">边唱边学</div>
     </div>
     <div class="menu-card bg-6" data-page="game">
-      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/trophy.png" alt="游戏" />
+      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/trophy.png?x-oss-process=image/quality,q_100" alt="游戏" />
       <div class="title">游戏</div>
       <div class="sub">开心玩耍</div>
     </div>
     <div class="menu-card bg-7" data-page="poetry">
-      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/poetry.png" alt="古诗" />
+      <img class="icon-img" src="https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com/images/icons3d/poetry.png?x-oss-process=image/quality,q_100" alt="古诗" />
       <div class="title">古诗</div>
       <div class="sub">真人朗读</div>
+    </div>
+    <div class="menu-card bg-color" data-page="color">
+      <span class="icon icon-color-emoji">🎨</span>
+      <div class="title">颜色</div>
+      <div class="sub">认识七彩世界</div>
     </div>
   </div>
   <footer>👨‍👩‍👧 建议在家长陪伴下使用 · 每次15分钟为佳</footer>
@@ -1183,6 +1352,24 @@ footer {
   <div class="hvm-info" id="hv-info">一</div>
 </div>
 
+<!-- 颜色识别 -->
+<section id="color" class="page">
+  <button class="back-btn" data-back>← 回家</button>
+  <h2 class="page-title">🎨 认识颜色</h2>
+  <div class="pinyin-tip">
+    💡 点击下方色块切换颜色 · 点击物体会跳一跳还能听发音哦
+  </div>
+  <div class="color-stage" id="color-stage">
+    <div class="color-show" id="color-show">
+      <div class="color-bigname" id="color-bigname">红</div>
+      <div class="color-pinyin" id="color-pinyin">hóng</div>
+      <div class="color-en" id="color-en">Red</div>
+    </div>
+    <div class="color-objects" id="color-objects"></div>
+  </div>
+  <div class="color-palette" id="color-palette"></div>
+</section>
+
 <!-- 游戏 -->
 <section id="game" class="page">
   <button class="back-btn" data-back>← 回家</button>
@@ -1284,7 +1471,13 @@ footer {
  */
 const CDN_BASE = 'https://ruibaoqimeng.oss-cn-shenzhen.aliyuncs.com';  // ← 部署时替换
 function asset(path) {
-  return CDN_BASE && !CDN_BASE.includes('PLACEHOLDER') ? CDN_BASE + '/' + path : path;
+  if (!CDN_BASE || CDN_BASE.includes('PLACEHOLDER')) return path;
+  let url = CDN_BASE + '/' + path;
+  // 阿里云 OSS 默认域名对图片强制 attachment 下载，加 x-oss-process 参数绕过
+  if (/\.(png|jpg|jpeg|gif|webp)$/i.test(path) && !path.includes('?')) {
+    url += '?x-oss-process=image/quality,q_100';
+  }
+  return url;
 }
 
 /* ========= 工具函数 ========= */
@@ -1361,6 +1554,10 @@ function stopAllMedia() {
   // 古诗图文版浮层
   const ppm = document.getElementById('pp-modal');
   if (ppm) ppm.classList.remove('active');
+  // 颜色模块的 TTS 朗读
+  if ('speechSynthesis' in window) {
+    try { speechSynthesis.cancel(); } catch(e) {}
+  }
 }
 
 function showToast(msg, dur=1200) {
@@ -2025,6 +2222,183 @@ $$('#math .tab').forEach(t => {
   });
 });
 renderMath();
+
+/* ========= 颜色识别 ========= */
+const COLOR_DATA = [
+  {
+    cn:'红', py:'hóng', en:'Red', hex:'#ff4d4f', text:'#fff',
+    items:[
+      {emoji:'🍎', name:'苹果'}, {emoji:'🍓', name:'草莓'},
+      {emoji:'🌹', name:'玫瑰'}, {emoji:'🚗', name:'小汽车'},
+      {emoji:'❤️', name:'爱心'},
+    ]
+  },
+  {
+    cn:'橙', py:'chéng', en:'Orange', hex:'#ff9f43', text:'#fff',
+    items:[
+      {emoji:'🍊', name:'橘子'}, {emoji:'🥕', name:'胡萝卜'},
+      {emoji:'🎃', name:'南瓜'}, {emoji:'🦊', name:'小狐狸'},
+      {emoji:'🏀', name:'篮球'},
+    ]
+  },
+  {
+    cn:'黄', py:'huáng', en:'Yellow', hex:'#ffd93d', text:'#5d3a00',
+    items:[
+      {emoji:'🍌', name:'香蕉'}, {emoji:'🌻', name:'向日葵'},
+      {emoji:'🐤', name:'小鸡'}, {emoji:'🌞', name:'太阳'},
+      {emoji:'🐝', name:'小蜜蜂'},
+    ]
+  },
+  {
+    cn:'绿', py:'lǜ', en:'Green', hex:'#06d6a0', text:'#fff',
+    items:[
+      {emoji:'🍏', name:'青苹果'}, {emoji:'🥦', name:'西兰花'},
+      {emoji:'🌳', name:'大树'}, {emoji:'🐢', name:'小乌龟'},
+      {emoji:'🥒', name:'黄瓜'},
+    ]
+  },
+  {
+    cn:'蓝', py:'lán', en:'Blue', hex:'#4cc9f0', text:'#fff',
+    items:[
+      {emoji:'🐳', name:'鲸鱼'}, {emoji:'🌊', name:'海浪'},
+      {emoji:'🫐', name:'蓝莓'}, {emoji:'💎', name:'宝石'},
+      {emoji:'🦋', name:'蝴蝶'},
+    ]
+  },
+  {
+    cn:'紫', py:'zǐ', en:'Purple', hex:'#b388ff', text:'#fff',
+    items:[
+      {emoji:'🍇', name:'葡萄'}, {emoji:'🍆', name:'茄子'},
+      {emoji:'💜', name:'紫心'}, {emoji:'🦄', name:'独角兽'},
+      {emoji:'🌂', name:'雨伞'},
+    ]
+  },
+  {
+    cn:'粉', py:'fěn', en:'Pink', hex:'#ff85a2', text:'#fff',
+    items:[
+      {emoji:'🌸', name:'樱花'}, {emoji:'🍑', name:'桃子'},
+      {emoji:'🦩', name:'火烈鸟'}, {emoji:'💗', name:'粉心'},
+      {emoji:'🎀', name:'蝴蝶结'},
+    ]
+  },
+  {
+    cn:'黑', py:'hēi', en:'Black', hex:'#2c2c2c', text:'#fff',
+    items:[
+      {emoji:'🐧', name:'企鹅'}, {emoji:'🐈‍⬛', name:'黑猫'},
+      {emoji:'🦇', name:'蝙蝠'}, {emoji:'⚫', name:'黑圆'},
+      {emoji:'🎩', name:'黑帽子'},
+    ]
+  },
+  {
+    cn:'白', py:'bái', en:'White', hex:'#f5f5f5', text:'#666',
+    items:[
+      {emoji:'🐰', name:'小白兔'}, {emoji:'🥚', name:'鸡蛋'},
+      {emoji:'☁️', name:'白云'}, {emoji:'🦢', name:'天鹅'},
+      {emoji:'🍚', name:'米饭'},
+    ]
+  },
+  {
+    cn:'灰', py:'huī', en:'Gray', hex:'#a8a8a8', text:'#fff',
+    items:[
+      {emoji:'🐘', name:'大象'}, {emoji:'🐺', name:'灰狼'},
+      {emoji:'🪨', name:'石头'}, {emoji:'🐭', name:'小老鼠'},
+      {emoji:'🌫️', name:'雾'},
+    ]
+  },
+  {
+    cn:'棕', py:'zōng', en:'Brown', hex:'#a0522d', text:'#fff',
+    items:[
+      {emoji:'🐻', name:'小熊'}, {emoji:'🐴', name:'小马'},
+      {emoji:'🍫', name:'巧克力'}, {emoji:'🥔', name:'土豆'},
+      {emoji:'🌰', name:'栗子'},
+    ]
+  },
+  {
+    cn:'金', py:'jīn', en:'Gold', hex:'#ffc107', text:'#5d3a00',
+    items:[
+      {emoji:'🏆', name:'奖杯'}, {emoji:'⭐', name:'星星'},
+      {emoji:'👑', name:'皇冠'}, {emoji:'🥇', name:'金牌'},
+      {emoji:'🔔', name:'铃铛'},
+    ]
+  },
+];
+let _curColorIdx = 0;
+function renderColorPalette() {
+  const palette = $('#color-palette');
+  palette.innerHTML = '';
+  COLOR_DATA.forEach((c, idx) => {
+    const sw = document.createElement('div');
+    sw.className = 'color-swatch' + (idx === _curColorIdx ? ' active' : '');
+    sw.style.background = c.hex;
+    sw.style.color = c.text;
+    sw.textContent = c.cn;
+    sw.onclick = ()=> {
+      sfx('pop');
+      _curColorIdx = idx;
+      renderColorPalette();
+      renderColorShow();
+      speakColor(c);
+    };
+    palette.appendChild(sw);
+  });
+}
+function renderColorShow() {
+  const c = COLOR_DATA[_curColorIdx];
+  const show = $('#color-show');
+  show.style.background = c.hex;
+  show.style.color = c.text;
+  // 重置动画
+  const bigName = $('#color-bigname');
+  bigName.style.animation = 'none';
+  bigName.offsetHeight; // trigger reflow
+  bigName.style.animation = '';
+  bigName.textContent = c.cn;
+  $('#color-pinyin').textContent = c.py;
+  $('#color-en').textContent = c.en;
+
+  const objs = $('#color-objects');
+  objs.innerHTML = '';
+  c.items.forEach(it => {
+    const card = document.createElement('div');
+    card.className = 'color-obj';
+    card.innerHTML = `
+      <span class="color-obj-emoji">${it.emoji}</span>
+      <div class="color-obj-name">${it.name}</div>
+    `;
+    card.onclick = ()=> {
+      sfx('pop');
+      card.classList.remove('bounce');
+      void card.offsetWidth;
+      card.classList.add('bounce');
+      speakObject(c, it);
+    };
+    objs.appendChild(card);
+  });
+}
+function speakColor(c) {
+  if (!('speechSynthesis' in window)) return;
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(`${c.cn}色，${c.en}`);
+    u.lang = 'zh-CN';
+    u.rate = 0.85;
+    u.pitch = 1.1;
+    speechSynthesis.speak(u);
+  } catch(e) {}
+}
+function speakObject(c, it) {
+  if (!('speechSynthesis' in window)) return;
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(`${c.cn}色的${it.name}`);
+    u.lang = 'zh-CN';
+    u.rate = 0.85;
+    u.pitch = 1.15;
+    speechSynthesis.speak(u);
+  } catch(e) {}
+}
+renderColorPalette();
+renderColorShow();
 
 /* ========= 儿歌 ========= */
 const SONGS = [
